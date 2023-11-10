@@ -1,6 +1,4 @@
-import React from "react";
 import { about_list } from "@/constants";
-import Image from "next/image";
 const About = () => {
   return (
     <section className="w-full p-5">

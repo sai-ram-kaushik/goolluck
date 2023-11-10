@@ -1,6 +1,9 @@
 import { MdBusinessCenter } from "react-icons/md";
 import { BiSolidSchool } from "react-icons/bi";
 import { BsFillPersonFill } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { AiFillLinkedin } from "react-icons/ai";
+import { RiTwitterXFill } from "react-icons/ri";
 export const menuList = [
   { label: "Home", path: "/", key: "Home" },
   { label: "About Us", path: "/#about", key: "About" },
@@ -48,4 +51,10 @@ export const about_list = [
     icon: <BsFillPersonFill size={60} />,
     desc: "At GOOLLUCK INVESTMENTS, our commitment to excellence and innovation sets us apart. We are not just financial experts but also dedicated educators, ensuring you have the tools for success. Count on us as a trusted partner in your financial journey, where a passion for education drives our commitment to your financial well-being.",
   },
+];
+
+export const socials = [
+  { label: "Instagram", icon: <BsInstagram size={20} />, path: "", key: "Instagram" },
+  { label: "LinkedIn", icon: <AiFillLinkedin size={20} />, path: "", key: "LinkedIn" },
+  { label: "Twitter", icon: <RiTwitterXFill size={20} />, path: "", key: "Twitter" },
 ];
