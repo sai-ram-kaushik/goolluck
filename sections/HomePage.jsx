@@ -30,7 +30,7 @@ const HomePage = () => {
             <p className="text-center lg:text-start">
               Goolluck is a portfolio advisory firm and stock market training
               institute. Here, you will learn about real time trading and
-              strategies used by the traders of our institution. yes, we
+              strategies used by the traders of our institution. Yes, we
               don&apos;t have teachers, traders instead
             </p>
 

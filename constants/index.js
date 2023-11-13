@@ -18,9 +18,9 @@ export const menuList = [
     key: "Investment Platform",
   },
   {
-    label: "Virtual Stock Market",
+    label: "Saand ki ankh (Game)",
     path: "/virtual-stock-market",
-    key: "Virtual Stock Market",
+    key: "Saand ki ankh (Game)",
   },
   {
     label: "Life @ Goolluck",
@@ -147,4 +147,22 @@ export const team = [
     photo: "/assets/team/palak.png",
     key: "Deepti_Attreja",
   },
+];
+
+export const training = [
+  {
+    label: "Stock Market Crash Course",
+    key: "training 1",
+    date: "25th Nov, 2023",
+    time: "5:00PM - 6:00PM",
+    cost: "Rs 599 (including GST)",
+  },
+  {
+    label: "Derivative Course",
+    key: "training 1",
+    date: "9th Dec, 2023",
+    time: "5:00PM - 6:00PM",
+    cost: "Rs 599 (including GST)",
+  },
+
 ];

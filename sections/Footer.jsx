@@ -3,6 +3,7 @@ import logo from "@/public/assets/goolluck_investments_logo.png";
 import { menuList } from "@/constants";
 import { socials } from "@/constants";
 import { AiOutlineMail } from "react-icons/ai";
+import { TbDeviceLandlinePhone } from "react-icons/tb";
 import { BiPhoneCall } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
 import Link from "next/link";
@@ -31,13 +32,20 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            <TbDeviceLandlinePhone size={20} className="text-secondary" />
+            <p>0124-4200901 or 4200903</p>
+          </div>
+
+          <div className="flex items-center gap-2">
             <BiPhoneCall size={20} className="text-secondary" />
-            <p>+91 96545572859</p>
+            <p>+91 9999974265</p>
           </div>
 
           <div className="flex items-center gap-2">
             <CiLocationOn size={20} className="text-secondary" />
-            <p>Gurugram, India</p>
+            <a href="https://maps.app.goo.gl/tXVPE1c2Zr3YvTzLA" target="_blank">
+              <p>Gurugram, India</p>
+            </a>
           </div>
         </div>
 
@@ -57,9 +65,9 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
-              <p>Privacy Policy</p>
-              <p>|</p>
-              <p>Terms of Service</p>
+            <p>Privacy Policy</p>
+            <p>|</p>
+            <p>Terms of Service</p>
           </div>
         </div>
       </div>

@@ -1,8 +1,10 @@
+import TransitionEffect from "@/components/TransitionEffect";
 import { team } from "@/constants";
 import Image from "next/image";
 const index = () => {
   return (
     <section className="w-full p-5">
+      <TransitionEffect />
       <div className="container mx-auto">
         <div className="flex items-center justify-center">
           <h3>
