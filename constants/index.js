@@ -6,7 +6,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { RiTwitterXFill } from "react-icons/ri";
 export const menuList = [
   { label: "Home", path: "/", key: "Home" },
-  { label: "About Us", path: "/#about", key: "About" },
+  { label: "About Us", path: "/about", key: "About" },
   {
     label: "Stock Market Training",
     path: "/stock-market-training",
@@ -54,7 +54,97 @@ export const about_list = [
 ];
 
 export const socials = [
-  { label: "Instagram", icon: <BsInstagram size={20} />, path: "", key: "Instagram" },
-  { label: "LinkedIn", icon: <AiFillLinkedin size={20} />, path: "", key: "LinkedIn" },
-  { label: "Twitter", icon: <RiTwitterXFill size={20} />, path: "", key: "Twitter" },
+  {
+    label: "Instagram",
+    icon: <BsInstagram size={20} />,
+    path: "",
+    key: "Instagram",
+  },
+  {
+    label: "LinkedIn",
+    icon: <AiFillLinkedin size={20} />,
+    path: "",
+    key: "LinkedIn",
+  },
+  {
+    label: "Twitter",
+    icon: <RiTwitterXFill size={20} />,
+    path: "",
+    key: "Twitter",
+  },
+];
+
+export const team = [
+  {
+    name: "Jaya Srivastava",
+    designation: "Financial Advisor",
+    description:
+      "Seasoned professional with 10+ years of work experience in stock broking firm. MBA finance Stock market enthusiasts, expertise on managing and advising on wealth creation. Believes in nurturing the long term financial relationship",
+    photo: "/assets/team/jaya.png",
+    key: "jaya",
+  },
+  {
+    name: "Bharti",
+    designation: "Financial Advisor",
+    description:
+      "MBA in Finance, 9+ years of experience in Stock Market.  Transparency, integrity, and open communication define my client relationships, Let's work together to turn your financial aspirations into a reality.",
+    photo: "/assets/team/bharti.png",
+    key: "bharti",
+  },
+  {
+    name: "Mansi",
+    designation: "Financial Advisor",
+    description:
+      "Bcom (Hons.), MBA in finance, 5+ years of experience in the stock market, BSE certified in Financial Market course, I am committed to helping you achieve your unique financial goals and dreams, My mission is to simplify complex financial charts and make them work for you",
+    photo: "/assets/team/mansi.png",
+    key: "mansi",
+  },
+  {
+    name: "Yash Madan",
+    designation: "Financial Advisor",
+    description:
+      "Mathematics major with 4+ years experience in financial markets, Focused on designing investment strategies that minimises the risk of markets, Keeping the investments safe is the top priority, Let me help you create a portfolio that lets you retire early.",
+    photo: "/assets/team/yash_madan.png",
+    key: "yash",
+  },
+  {
+    name: "Vidhi",
+    designation: "Financial Advisor",
+    description:
+      "B.SC(H) Mathematics, 2+ Year Experience in Stock Market, My mission is to craft personalized financial strategies for your unique journey to prosperity. Beyond advice, we offer a roadmap to financial freedom and confidence",
+    photo: "/assets/team/vidhi.png",
+    key: "Vidhi",
+  },
+  {
+    name: "Deepti Khatri",
+    designation: "Financial Advisor",
+    description:
+      "Rooted in multi faceted experience, I prioritise investments to enrich lives and secure futures. The right relationship is everything-with finances & people.",
+    photo: "/assets/team/deepti.png",
+    key: "Deepti",
+  },
+  {
+    name: "Deepti Attreja",
+    designation: "Financial Advisor",
+    description:
+      "M.Com, MBA in finance, Diverse 8+ years of experience in financial sector, I stay at the forefront of industry trends, ensuring your financial plan adapts to the ever-changing market, Your financial well-being is my priority; let's work together to secure your future.",
+    photo: "/assets/team/deepti_attreja.png",
+    key: "Deepti_Attreja",
+  },
+  {
+    name: "Ritu Rai",
+    designation: "Financial Advisor",
+    description:
+      "Join a community of empowered individuals who are transforming their financial lives under my guidance. Every financial decision you make is a building block toward your dreams; let's build together, Contact me today for a consultation, and let's embark on a journey to financial prosperity.",
+    photo: "/assets/team/ritu.png",
+    key: "Deepti_Attreja",
+  },
+  {
+    name: "Palak",
+    designation: "Financial Advisor",
+    description:
+      "BBA and PGDM in finance, 2+ years of experience in Stock Market, Transparency is at the core of my client relationships, ensuring you are informed every step of the way. As your financial ally, I am committed to turning your financial goals into achievable milestones.",
+    photo: "/assets/team/palak.png",
+    key: "Deepti_Attreja",
+  },
 ];

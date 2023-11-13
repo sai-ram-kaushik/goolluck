@@ -13,8 +13,8 @@ const About = () => {
           {about_list.map((list) => (
             <div key={list.key} className="flex flex-col items-center gap-5">
               <div className="p-5 bg-secondary/10 rounded-full">{list.icon}</div>
-              <p className="text-2xl font-bold text-center">{list.label}</p>
-              <p className="font-light text-center">{list.desc}</p>
+              <p className="text-2xl font-bold text-center text-secondary font-playfair">{list.label}</p>
+              <p className="font-light text-center text-sm">{list.desc}</p>
             </div>
           ))}
         </div>

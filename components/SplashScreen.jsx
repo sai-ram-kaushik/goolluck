@@ -28,7 +28,7 @@ const SplashScreen = ({ finishLoading }) => {
 
   return (
     <>
-      <div className="w-full h-screen bg-black">
+      <div className="w-full h-screen bg-black p-3 lg:p-0">
         <div className="flex items-center justify-center h-full w-full">
           <Image src={logo} alt="logo" id="logo" />
         </div>

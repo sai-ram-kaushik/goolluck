@@ -14,7 +14,7 @@ const Footer = () => {
           <Image src={logo} alt="logo" width={200} height={200} />
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-10 mt-5">
+        <div className="hidden lg:flex flex-wrap items-center justify-center gap-10 mt-5">
           {menuList.map((link) => (
             <ul key={link.key} className="hover:text-secondary duration-200">
               <Link href={link.path}>
@@ -24,7 +24,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="p-8 border-t border-b flex flex-wrap items-center gap-10 lg:gap-28 justify-center mt-10">
+        <div className="p-8 border-t border-gray-800 border-b flex flex-wrap items-center gap-10 lg:gap-28 justify-center mt-10">
           <div className="flex items-center gap-2">
             <AiOutlineMail size={20} className="text-secondary" />
             <p>info@goolluck.in</p>
@@ -41,8 +41,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between mt-10">
-          <div className="flex items-center gap-5 ">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-5 mt-10">
+          <div className="flex items-center gap-5 cursor-pointer">
             {socials.map((link) => (
               <div
                 key={link.key}
