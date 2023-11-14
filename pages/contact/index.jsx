@@ -10,7 +10,7 @@ const Contact = () => {
     return <p>Thanks for joining!</p>;
   }
   return (
-    <section className="w-full h-[90vh] p-5">
+    <section className="w-full p-5">
       <TransitionEffect />
       <div className="container mx-auto w-full h-full">
         <div className="flex items-center justify-center">
