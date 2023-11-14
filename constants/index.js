@@ -151,7 +151,7 @@ export const team = [
 
 export const training = [
   {
-    label: "Stock Market Crash Course",
+    label: "Stock Market Course",
     key: "training 1",
     date: "25th Nov, 2023",
     time: "5:00PM - 6:00PM",
