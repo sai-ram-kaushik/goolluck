@@ -1,9 +1,17 @@
 import Button from "@/components/Button";
 import TransitionEffect from "@/components/TransitionEffect";
 import { training } from "@/constants";
+import Image from "next/image";
+import {
+  life_at_goolluck_training_iit,
+  life_at_goolluck_training_hansraj,
+  life_at_goolluck_training_mdi,
+  life_at_goolluck_training_imt,
+  life_at_goolluck_training_offline,
+} from "@/constants/index";
 const Stock_Market_Training = () => {
   return (
-    <section className="w-full p-5">
+    <section className="w-full p-5 hidden lg:block">
       <TransitionEffect />
       <div className="container mx-auto">
         <div className="flex items-center justify-center">
@@ -26,10 +34,115 @@ const Stock_Market_Training = () => {
                   </div>
                 </div>
 
-                <Button>Register Now</Button>
+                <Button>
+                  <a href="https://wa.me/8810473262" target="_blank">Register Now</a>
+                </Button>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex items-center justify-center mt-10">
+          <h3>Stock Market Courses</h3>
+        </div>
+
+        <div className="container mx-auto">
+          <div className="flex flex-col gap-10 items-center justify-center mt-5">
+            <div className="container mx-auto flex flex-col gap-5 items-center">
+              <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+                Training Session at <span>IIT - Guwahati</span>
+              </p>
+              <div className="flex flex-wrap items-center gap-5 cursor-pointer">
+                {life_at_goolluck_training_iit.map((item) => (
+                  <div key={item.key}>
+                    <Image
+                      src={item.photo}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 items-center">
+              <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+                Training Session at <span>MDI, Gurgaon</span>
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-5 cursor-pointer">
+                {life_at_goolluck_training_mdi.map((item) => (
+                  <div key={item.key}>
+                    <Image
+                      src={item.photo}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 items-center">
+              <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+                Training Session at <span>Hansraj College, New Delhi</span>
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-5 cursor-pointer">
+                {life_at_goolluck_training_hansraj.map((item) => (
+                  <div key={item.key}>
+                    <Image
+                      src={item.photo}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 items-center">
+              <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+                Training Session at <span>IMT, Ghaziabad</span>
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-5 cursor-pointer">
+                {life_at_goolluck_training_imt.map((item) => (
+                  <div key={item.key}>
+                    <Image
+                      src={item.photo}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 items-center">
+              <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+                Offline Training at <span>Goolluck Institute</span>
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-5 cursor-pointer">
+                {life_at_goolluck_training_offline.map((item) => (
+                  <div key={item.key}>
+                    <Image
+                      src={item.photo}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

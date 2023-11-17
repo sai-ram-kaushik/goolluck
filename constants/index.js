@@ -19,12 +19,12 @@ export const menuList = [
   },
   {
     label: "Saand ki ankh (Game)",
-    path: "/virtual-stock-market",
+    path: "/saand-ki-ankh",
     key: "Saand ki ankh (Game)",
   },
   {
     label: "Life @ Goolluck",
-    path: "/ife-at-goolluck",
+    path: "/life-at-goolluck",
     key: "Life @ Goolluck",
   },
   { label: "Contact Us", path: "/contact", key: "Contact Us" },
@@ -164,5 +164,92 @@ export const training = [
     time: "5:00PM - 6:00PM",
     cost: "Rs 599 (including GST)",
   },
+];
 
+export const life_at_goolluck_training_iit = [
+  { photo: "/assets/life_at_goolluck/iit/iit1.JPEG", key: 1 },
+  { photo: "/assets/life_at_goolluck/iit/iit2.JPEG", key: 2 },
+  { photo: "/assets/life_at_goolluck/iit/iit3.JPEG", key: 3 },
+  { photo: "/assets/life_at_goolluck/iit/iit4.JPEG", key: 4 },
+];
+
+export const life_at_goolluck_training_mdi = [
+  { photo: "/assets/life_at_goolluck/mdi/mdi1.jpg" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi2.jpg" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi3.jpg" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi4.jpg" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi6.jpg" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi7.JPG" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi8.JPG" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi9.JPG" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi10.JPG" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi11.JPG" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi12.JPG" },
+];
+
+export const life_at_goolluck_training_hansraj = [
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj1.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj2.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj3.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj4.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj5.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj6.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj7.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj8.JPEG" },
+];
+
+export const life_at_goolluck_training_imt = [
+  { photo: "/assets/life_at_goolluck/imt/imt1.jpg" },
+  { photo: "/assets/life_at_goolluck/imt/imt2.jpg" },
+  { photo: "/assets/life_at_goolluck/imt/imt3.jpg" },
+  { photo: "/assets/life_at_goolluck/imt/imt4.jpg" },
+];
+
+export const life_at_goolluck_training_offline = [
+  { photo: "/assets/life_at_goolluck/offline_training/offline1.JPEG" },
+  // { photo: "/assets/life_at_goolluck/offline_training/offline2.JPEG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline3.JPEG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline4.JPEG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline5.JPEG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline6.JPEG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline7.JPG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline8.JPG" },
+];
+
+export const life_at_goolluck = [
+  { photo: "/assets/life_at_goolluck/recreational_activities/m1.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m2.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m3.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m4.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m5.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m6.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/1.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/2.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/3.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/4.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/5.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/6.jpg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/7.jpg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/8.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/9.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/10.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/11.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/12.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/13.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/14.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/15.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/16.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/17.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/18.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/19.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/20.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/21.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/22.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/23.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/24.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/25.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/26.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/27.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/28.jpeg" },
 ];

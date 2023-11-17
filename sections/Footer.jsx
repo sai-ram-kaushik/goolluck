@@ -33,12 +33,12 @@ const Footer = () => {
 
           <div className="flex items-center gap-2">
             <TbDeviceLandlinePhone size={20} className="text-secondary" />
-            <p>0124-4200901 or 4200903</p>
+            <p>0124-4200901/903</p>
           </div>
 
           <div className="flex items-center gap-2">
             <BiPhoneCall size={20} className="text-secondary" />
-            <p>+91 9999974265</p>
+            <p>+91 8810473262</p>
           </div>
 
           <div className="flex items-center gap-2">

@@ -20,8 +20,8 @@ const HomePage = () => {
                     "Portfolio Advisory Firm ",
                     "Stock Market Traininig Institute",
                   ]}
-                  typeSpeed={100}
-                  backSpeed={100}
+                  typeSpeed={150}
+                  backSpeed={5}
                   loop
                 />
               </span>

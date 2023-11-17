@@ -56,8 +56,8 @@ const index = () => {
                 className="rounded-full border-2 border-secondary"
               />
               <p className="text-2xl text-secondary font-bold">{list.name}</p>
-              <p className="font-bold">{list.designation}</p>
-              <p className="max-w-[400px] text-center">{list.description}</p>
+              {/* <p className="font-bold">{list.designation}</p> */}
+              <p className="max-w-[400px] text-center text-sm lg:text-lg">{list.description}</p>
             </div>
           ))}
         </div>
