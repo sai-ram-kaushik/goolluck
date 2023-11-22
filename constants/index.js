@@ -4,6 +4,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { RiTwitterXFill } from "react-icons/ri";
+import { FaFacebookF } from "react-icons/fa";
 export const menuList = [
   { label: "Home", path: "/", key: "Home" },
   { label: "About Us", path: "/about", key: "About" },
@@ -57,19 +58,25 @@ export const socials = [
   {
     label: "Instagram",
     icon: <BsInstagram size={20} />,
-    path: "",
+    path: "https://instagram.com/goolluck_investments?igshid=MTk0NTkyODZkYg==",
     key: "Instagram",
+  },
+  {
+    label: "Facebook",
+    icon: <FaFacebookF size={20} />,
+    path: "https://www.facebook.com/goolluckinvestment/",
+    key: "facebook",
   },
   {
     label: "LinkedIn",
     icon: <AiFillLinkedin size={20} />,
-    path: "",
+    path: "http://www.linkedin.com/in/goolluck-investments-8a5a862a0",
     key: "LinkedIn",
   },
   {
     label: "Twitter",
     icon: <RiTwitterXFill size={20} />,
-    path: "",
+    path: "https://twitter.com/Goolluck_Invest",
     key: "Twitter",
   },
 ];

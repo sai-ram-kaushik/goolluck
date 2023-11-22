@@ -55,7 +55,11 @@ const Footer = () => {
               <div
                 key={link.key}
                 className="bg-secondary text-black rounded-full p-3">
-                <div>{link.icon}</div>
+                <a href={link.path} target="_blank">
+                  <div>
+                    {link.icon}
+                  </div>
+                </a>
               </div>
             ))}
           </div>
