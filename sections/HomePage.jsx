@@ -2,7 +2,7 @@
 
 import Typed from "react-typed";
 import Image from "next/image";
-import vector from "@/public/assets/vector.svg";
+import vector from "@/public/assets/8.png";
 import Button from "@/components/Button";
 import design from "@/public/assets/design.png";
 import TransitionEffect from "@/components/TransitionEffect";
@@ -20,17 +20,17 @@ const HomePage = () => {
             </h1>
 
             <p className='text-center lg:text-start'>
-              Goolluck is a portfolio advisory firm and stock market training
+              Goolluck Investments is a portfolio advisory firm and stock market training
               institute. Here, you will learn about real time trading and
               strategies used by the traders of our institution. Learn directly
-              from trader, so come & learn directly from traders.
+              from trader. Come & learn directly from traders.
             </p>
 
             <Button>Get Started</Button>
           </div>
 
           <div>
-            <Image src={vector} alt='home_vector' />
+            <Image src={vector} alt='home_vector' width={700} height={700} className="rounded-xl" />
           </div>
         </div>
       </div>
