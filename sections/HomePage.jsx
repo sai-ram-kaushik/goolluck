@@ -16,7 +16,7 @@ const HomePage = () => {
           <div className='flex flex-col items-center lg:items-start lg:w-[649.81px] gap-[50px]'>
             <h1 className='leading-[4.5rem]'>
               Goolluck Investments -{" "}
-              <span>Stock Market Traininig Institute</span>
+              <span>Stock Market Training Institute</span>
             </h1>
 
             <p className='text-center lg:text-start'>
