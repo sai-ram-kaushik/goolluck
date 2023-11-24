@@ -6,7 +6,6 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaFacebookF } from "react-icons/fa";
 export const menuList = [
-  { label: "Home", path: "/", key: "Home" },
   { label: "About Us", path: "/about", key: "About" },
   {
     label: "Stock Market Training",
@@ -19,9 +18,9 @@ export const menuList = [
     key: "Investment Platform",
   },
   {
-    label: "Saand ki ankh (Game)",
-    path: "/saand-ki-ankh",
-    key: "Saand ki ankh (Game)",
+    label: "Knowledge Center",
+    path: "/knowledge-center",
+    key: "Knowledge Center",
   },
   {
     label: "Life @ Goolluck",

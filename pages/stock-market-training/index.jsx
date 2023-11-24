@@ -61,7 +61,7 @@ const Stock_Market_Training = ({ data }) => {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
-          <div className="flex flex-col items-center lg:items-start gap-2">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-5">
             {data.stockMarketCourses.map((list) => (
               <div key={list.id}>
                 <Image src={list.backDrop.url} width={300} height={300} alt={list.title} className="rounded-xl" />
