@@ -11,18 +11,10 @@ import {
 import Link from "next/link";
 import Scroll from "@/components/Scroll";
 
-export const getStaticProps = async () => {
-  const data = await getStockMarketTraining();
-  return {
-    props: {
-      data,
-    },
-  };
-};
 
 const Stock_Market_Training = ({ data }) => {
   return (
-    <section className="w-full p-5">
+    <div className="w-full p-5">
       <TransitionEffect />
       <Scroll />
       <div className="container mx-auto">
@@ -89,7 +81,9 @@ const Stock_Market_Training = ({ data }) => {
         <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
             {data.stockMarketCourses.map((list) => (
-              <Link href={`/stock-market-training/${list.slug}`} key={list.id}>
+              <Link
+                href={`/stock-market-training/${list.slug}`}
+                key={list.title}>
                 <div className="flex flex-col items-center lg:items-start gap-2 border border-secondary p-5 rounded-xl sha">
                   <Image
                     src={list.backDrop.url}
@@ -214,8 +208,17 @@ const Stock_Market_Training = ({ data }) => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
 export default Stock_Market_Training;
+
+export const getStaticProps = async () => {
+  const data = await getStockMarketTraining();
+  return {
+    props: {
+      data,
+    },
+  };
+};
