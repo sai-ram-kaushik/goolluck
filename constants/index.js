@@ -155,22 +155,6 @@ export const team = [
   },
 ];
 
-export const training = [
-  {
-    label: "Stock Market Course",
-    key: "training 1",
-    date: "25th Nov, 2023",
-    time: "5:00PM - 6:00PM",
-    cost: "Rs 599 (including GST)",
-  },
-  {
-    label: "Derivative Course",
-    key: "training 1",
-    date: "9th Dec, 2023",
-    time: "5:00PM - 6:00PM",
-    cost: "Rs 599 (including GST)",
-  },
-];
 
 export const life_at_goolluck_training_iit = [
   { photo: "/assets/life_at_goolluck/iit/iit1.JPEG", key: 1 },
