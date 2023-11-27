@@ -78,7 +78,7 @@ const Stock_Market_Training = ({ data }) => {
           </h3>
         </div>
 
-        {/* <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
+        <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
             {data.stockMarketCourses.map((list) => (
               <Link
@@ -103,7 +103,7 @@ const Stock_Market_Training = ({ data }) => {
               </Link>
             ))}
           </div>
-        </div> */}
+        </div>
 
         <div className="flex items-center justify-center mt-10">
           <h3>Previous Training Sessions</h3>
