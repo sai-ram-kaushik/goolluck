@@ -1,5 +1,3 @@
-"use client";
-
 import TransitionEffect from "@/components/TransitionEffect";
 import { getStockMarketTraining } from "@/lib/data";
 import Image from "next/image";
@@ -13,7 +11,7 @@ import {
 import Link from "next/link";
 import Scroll from "@/components/Scroll";
 
-const Stock_Market_Training = ({ data }) => {
+const Stock_Market_Training = ( {data} ) => {
   return (
     <div className="w-full p-5">
       <TransitionEffect />
@@ -97,8 +95,9 @@ const Stock_Market_Training = ({ data }) => {
                     {list.title}
                   </p>
                   <p className="lg:w-[15rem] text-center lg:text-start">
-                    {list.desc.slice(0, 100)}{" "}
-                    {list.desc.length > 100 ? "..." : ""}
+                    {/* {list.desc.slice(0, 100)}{" "}
+                    {list.desc.length > 100 ? "..." : ""} */}
+                    {list.desc}
                   </p>
                 </Link>
               </div>
