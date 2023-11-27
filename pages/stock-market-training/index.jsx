@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import TransitionEffect from "@/components/TransitionEffect";
 import { getStockMarketTraining } from "@/lib/data";
@@ -12,7 +12,6 @@ import {
 } from "@/constants";
 import Link from "next/link";
 import Scroll from "@/components/Scroll";
-
 
 const Stock_Market_Training = ({ data }) => {
   return (
@@ -83,10 +82,10 @@ const Stock_Market_Training = ({ data }) => {
         <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
             {data.stockMarketCourses.map((list) => (
-              <Link
-                href={`/stock-market-training/${list.slug}`}
+              <div
+                className="flex flex-col items-center lg:items-start gap-2 border border-secondary p-5 rounded-xl"
                 key={list.title}>
-                <div className="flex flex-col items-center lg:items-start gap-2 border border-secondary p-5 rounded-xl sha">
+                <Link href={`/stock-market-training/${list.slug}`}>
                   <Image
                     src={list.backDrop.url}
                     width={300}
@@ -101,8 +100,8 @@ const Stock_Market_Training = ({ data }) => {
                     {list.desc.slice(0, 100)}{" "}
                     {list.desc.length > 100 ? "..." : ""}
                   </p>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
