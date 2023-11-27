@@ -4,8 +4,8 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 import { RiTwitterXFill } from "react-icons/ri";
+import { FaFacebookF } from "react-icons/fa";
 export const menuList = [
-  { label: "Home", path: "/", key: "Home" },
   { label: "About Us", path: "/about", key: "About" },
   {
     label: "Stock Market Training",
@@ -18,9 +18,9 @@ export const menuList = [
     key: "Investment Platform",
   },
   {
-    label: "Saand ki ankh (Game)",
-    path: "/saand-ki-ankh",
-    key: "Saand ki ankh (Game)",
+    label: "Knowledge Center",
+    path: "/knowledge-center",
+    key: "Knowledge Center",
   },
   {
     label: "Life @ Goolluck",
@@ -57,19 +57,25 @@ export const socials = [
   {
     label: "Instagram",
     icon: <BsInstagram size={20} />,
-    path: "",
+    path: "https://instagram.com/goolluck_investments?igshid=MTk0NTkyODZkYg==",
     key: "Instagram",
+  },
+  {
+    label: "Facebook",
+    icon: <FaFacebookF size={20} />,
+    path: "https://www.facebook.com/goolluckinvestment/",
+    key: "facebook",
   },
   {
     label: "LinkedIn",
     icon: <AiFillLinkedin size={20} />,
-    path: "",
+    path: "http://www.linkedin.com/in/goolluck-investments-8a5a862a0",
     key: "LinkedIn",
   },
   {
     label: "Twitter",
     icon: <RiTwitterXFill size={20} />,
-    path: "",
+    path: "https://twitter.com/Goolluck_Invest",
     key: "Twitter",
   },
 ];
@@ -253,3 +259,4 @@ export const life_at_goolluck = [
   { photo: "/assets/life_at_goolluck/recreational_activities/27.jpeg" },
   { photo: "/assets/life_at_goolluck/recreational_activities/28.jpeg" },
 ];
+

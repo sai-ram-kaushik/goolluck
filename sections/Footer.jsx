@@ -15,33 +15,26 @@ const Footer = () => {
           <Image src={logo} alt="logo" width={200} height={200} />
         </div>
 
-        <div className="hidden lg:flex flex-wrap items-center justify-center gap-10 mt-5">
-          {menuList.map((link) => (
-            <ul key={link.key} className="hover:text-secondary duration-200">
-              <Link href={link.path}>
-                <li>{link.label}</li>
-              </Link>
-            </ul>
-          ))}
-        </div>
-
         <div className="p-8 border-t border-gray-800 border-b flex flex-wrap items-center gap-10 lg:gap-28 justify-center mt-10">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <AiOutlineMail size={20} className="text-secondary" />
-            <p>info@goolluck.in</p>
+            <p>goollucktraining@gmail.com</p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <TbDeviceLandlinePhone size={20} className="text-secondary" />
-            <p>0124-4200901/903</p>
+            <div className="flex flex-col items-start">
+              <p>0124-4200901 /</p>
+              <p>0124-4200903</p>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <BiPhoneCall size={20} className="text-secondary" />
-            <p>+91 8810473262</p>
+            <p>+91 9999974265</p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <CiLocationOn size={20} className="text-secondary" />
             <a href="https://maps.app.goo.gl/tXVPE1c2Zr3YvTzLA" target="_blank">
               <p>Gurugram, India</p>
@@ -50,16 +43,17 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-5 mt-10">
-          <div className="flex items-center gap-5 cursor-pointer">
+          <div className="flex items-center gap-5">
             {socials.map((link) => (
               <div
                 key={link.key}
                 className="bg-secondary text-black rounded-full p-3">
-                <div>{link.icon}</div>
+                <a href={link.path} target="_blank">
+                  <div>{link.icon}</div>
+                </a>
               </div>
             ))}
           </div>
-
           <div>
             <p>Goolluck Investments. All Rights Reserved</p>
           </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import anime from "animejs";
 import Image from "next/image";
-import logo from "@/public/assets/goolluck_investments_logo.png";
+import logo from "@/public/assets/logo.svg";
 const SplashScreen = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState(false);
   const animate = () => {
