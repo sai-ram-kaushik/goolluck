@@ -155,7 +155,6 @@ export const team = [
   },
 ];
 
-
 export const life_at_goolluck_training_iit = [
   { photo: "/assets/life_at_goolluck/iit/iit1.JPEG", key: 1 },
   { photo: "/assets/life_at_goolluck/iit/iit2.JPEG", key: 2 },
@@ -164,83 +163,139 @@ export const life_at_goolluck_training_iit = [
 ];
 
 export const life_at_goolluck_training_mdi = [
-  { photo: "/assets/life_at_goolluck/mdi/mdi1.jpg" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi2.jpg" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi3.jpg" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi4.jpg" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi6.jpg" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi7.JPG" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi8.JPG" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi9.JPG" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi10.JPG" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi11.JPG" },
-  { photo: "/assets/life_at_goolluck/mdi/mdi12.JPG" },
+  { photo: "/assets/life_at_goolluck/mdi/mdi1.jpg", key: 1 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi2.jpg", key: 2 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi3.jpg", key: 3 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi4.jpg", key: 4 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg", key: 5 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi6.jpg", key: 6 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi7.JPG", key: 7 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi8.JPG", key: 8 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi9.JPG", key: 9 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi10.JPG", key: 10 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi11.JPG", key: 11 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi12.JPG", key: 12 },
 ];
 
 export const life_at_goolluck_training_hansraj = [
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj1.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj2.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj3.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj4.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj5.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj6.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj7.JPEG" },
-  { photo: "/assets/life_at_goolluck/hansraj/hansraj8.JPEG" },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj1.JPEG", key: 1 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj2.JPEG", key: 2 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj3.JPEG", key: 3 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj4.JPEG", key: 4 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj5.JPEG", key: 5 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj6.JPEG", key: 6 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj7.JPEG", key: 7 },
+  { photo: "/assets/life_at_goolluck/hansraj/hansraj8.JPEG", key: 8 },
 ];
 
 export const life_at_goolluck_training_imt = [
-  { photo: "/assets/life_at_goolluck/imt/imt1.jpg" },
-  { photo: "/assets/life_at_goolluck/imt/imt2.jpg" },
-  { photo: "/assets/life_at_goolluck/imt/imt3.jpg" },
-  { photo: "/assets/life_at_goolluck/imt/imt4.jpg" },
+  { photo: "/assets/life_at_goolluck/imt/imt1.jpg", key: 1 },
+  { photo: "/assets/life_at_goolluck/imt/imt2.jpg", key: 2 },
+  { photo: "/assets/life_at_goolluck/imt/imt3.jpg", key: 3 },
+  { photo: "/assets/life_at_goolluck/imt/imt4.jpg", key: 4 },
 ];
 
 export const life_at_goolluck_training_offline = [
-  { photo: "/assets/life_at_goolluck/offline_training/offline1.JPEG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline1.JPEG", key: 1 },
   // { photo: "/assets/life_at_goolluck/offline_training/offline2.JPEG" },
-  { photo: "/assets/life_at_goolluck/offline_training/offline3.JPEG" },
-  { photo: "/assets/life_at_goolluck/offline_training/offline4.JPEG" },
-  { photo: "/assets/life_at_goolluck/offline_training/offline5.JPEG" },
-  { photo: "/assets/life_at_goolluck/offline_training/offline6.JPEG" },
-  { photo: "/assets/life_at_goolluck/offline_training/offline7.JPG" },
-  { photo: "/assets/life_at_goolluck/offline_training/offline8.JPG" },
+  { photo: "/assets/life_at_goolluck/offline_training/offline3.JPEG", key: 2 },
+  { photo: "/assets/life_at_goolluck/offline_training/offline4.JPEG", key: 3 },
+  { photo: "/assets/life_at_goolluck/offline_training/offline5.JPEG", key: 4 },
+  { photo: "/assets/life_at_goolluck/offline_training/offline6.JPEG", key: 5 },
+  { photo: "/assets/life_at_goolluck/offline_training/offline7.JPG", key: 6 },
+  { photo: "/assets/life_at_goolluck/offline_training/offline8.JPG", key: 7 },
 ];
 
 export const life_at_goolluck = [
-  { photo: "/assets/life_at_goolluck/recreational_activities/m1.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m2.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m3.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m4.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m5.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m6.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/1.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/2.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/3.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/4.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/5.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/6.jpg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/7.jpg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/8.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/9.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/10.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/11.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/12.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/13.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/14.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/15.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/16.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/17.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/18.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/19.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/20.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/21.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/22.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/23.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/24.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/25.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/26.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/27.jpeg" },
-  { photo: "/assets/life_at_goolluck/recreational_activities/28.jpeg" },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m1.jpeg", key: 2 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m2.jpeg", key: 3 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m3.jpeg", key: 4 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m4.jpeg", key: 5 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m5.jpeg", key: 6 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/m6.jpeg", key: 7 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/1.jpeg", key: 8 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/2.jpeg", key: 9 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/3.jpeg", key: 10 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/4.jpeg", key: 11 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/5.jpeg", key: 12 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/6.jpg", key: 13 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/7.jpg", key: 14 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/8.jpeg", key: 15 },
+  { photo: "/assets/life_at_goolluck/recreational_activities/9.jpeg", key: 16 },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/10.jpeg",
+    key: 17,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/11.jpeg",
+    key: 18,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/12.jpeg",
+    key: 19,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/13.jpeg",
+    key: 20,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/14.jpeg",
+    key: 21,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/15.jpeg",
+    key: 22,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/16.jpeg",
+    key: 23,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/17.jpeg",
+    key: 24,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/18.jpeg",
+    key: 25,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/19.jpeg",
+    key: 26,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/20.jpeg",
+    key: 27,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/21.jpeg",
+    key: 28,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/22.jpeg",
+    key: 29,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/23.jpeg",
+    key: 30,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/24.jpeg",
+    key: 31,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/25.jpeg",
+    key: 32,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/26.jpeg",
+    key: 33,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/27.jpeg",
+    key: 34,
+  },
+  {
+    photo: "/assets/life_at_goolluck/recreational_activities/28.jpeg",
+    key: 35,
+  },
 ];
-
