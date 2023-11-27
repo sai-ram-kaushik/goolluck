@@ -213,7 +213,7 @@ const Stock_Market_Training = ( {data} ) => {
 
 export default Stock_Market_Training;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await getStockMarketTraining();
   return {
     props: {
