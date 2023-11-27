@@ -1,6 +1,4 @@
-import Button from "@/components/Button";
 import TransitionEffect from "@/components/TransitionEffect";
-import { training } from "@/constants";
 import { getStockMarketTraining } from "@/lib/data";
 import Image from "next/image";
 import {
