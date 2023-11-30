@@ -5,147 +5,124 @@ import { MdMode } from "react-icons/md";
 import { RiPriceTag3Fill } from "react-icons/ri";
 import { GiTargetPrize } from "react-icons/gi";
 import investor from "@/public/assets/investor.jpg";
-const DynamicStockMarketTraining = () => {
+import { getStockMarketCourseDetails } from "@/lib/data";
+
+export const getStaticPaths = () => {
+  return {
+    paths: [],
+    fallback: true,
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
+  const data = await getStockMarketCourseDetails(params.slug);
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+const DynamicStockMarketTraining = ({ data }) => {
   return (
     <div className="w-full p-5">
       <div className="container mx-auto">
-        <div className="flex flex-col items-start  justify-start">
-          <div className="flex items-center justify-center gap-56 px-28">
-            <div className="flex flex-col items-center lg:items-start gap-8 py-16">
-              <h2>Investor Module</h2>
-              <p className="lg:max-w-[34rem] text-lg">
-                Welcome to our Investor module designed to equip you with the
-                knowledge and skills needed for successful investing. This
-                module covers four key areas that form the foundation of a
-                robust investment portfolio.
-              </p>
-            </div>
-
-            <div>
-              <Image src={investor} width={400} height={400} alt="investor" />
-            </div>
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-28">
+          <div className="flex flex-col items-center lg:items-start">
+            {data.stockMarketCourses.map((list) => (
+              <div key={list.title} className="flex flex-col gap-3">
+                <h2>{list.title}</h2>
+                <p className="lg:max-w-[30rem] text-justify text-lg">
+                  {list.desc}
+                </p>
+              </div>
+            ))}
           </div>
 
-          <div className="flex items-center py-5 bg-background shadow-xl p-5">
-            <div className="flex items-center gap-20">
-              <div className="flex flex-col items-center justify-center gap-3">
-                <div className="flex items-center gap-3">
-                  <TbTimeDuration30 size={40} />
-                  <span className="text-2xl font-bold">Duration</span>
+          <div>
+            {data.stockMarketCourses.map((list) => (
+              <Image
+                src={list.backDrop.url}
+                key={list.id}
+                alt={list.title}
+                width={500}
+                height={500}
+                className="rounded-3xl"
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-24 bg-background shadow-xl rounded-lg p-5">
+            {data.stockMarketCourses.map((list) => (
+              <div
+                key={list.slug}
+                className="flex flex-col lg:flex-row items-center justify-center gap-20">
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex items-center gap-3">
+                    <TbTimeDuration30 size={40} />
+                    <span className="text-2xl font-bold">Duration</span>
+                  </div>
+                  <p className="text-xl font-bold">{list.duration}</p>
                 </div>
-                <p className="text-2xl font-bold">1 month</p>
-              </div>
 
-              <div className="text-4xl">|</div>
-
-              <div className="flex flex-col items-center justify-center gap-3">
-                <div className="flex items-center gap-3">
-                  <MdMode size={40} />
-                  <span className="text-2xl font-bold">Mode</span>
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex items-center gap-3">
+                    <MdMode size={40} />
+                    <span className="text-2xl font-bold">Mode</span>
+                  </div>
+                  <p className="text-xl font-bold text-center">{list.mode}</p>
                 </div>
-                <p className="text-2xl font-bold">Online</p>
-              </div>
 
-              <div className="text-4xl">|</div>
-
-              <div className="flex flex-col items-center justify-center gap-3">
-                <div className="flex items-center gap-3">
-                  <RiPriceTag3Fill size={40} />
-                  <span className="text-2xl font-bold">Price</span>
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex items-center gap-3">
+                    <RiPriceTag3Fill size={40} />
+                    <span className="text-2xl font-bold">Price</span>
+                  </div>
+                  <p className="text-xl font-bold">{list.price}</p>
                 </div>
-                <p className="text-2xl font-bold">Rs. 12,000</p>
-              </div>
 
-              <div className="text-4xl">|</div>
-
-              <div className="flex flex-col items-center justify-center gap-3">
-                <div className="flex items-center gap-3">
-                  <TbTimeDuration30 size={40} />
-                  <span className="text-2xl font-bold">Requirement</span>
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex items-center gap-3">
+                    <RiPriceTag3Fill size={40} />
+                    <span className="text-2xl font-bold">Requirement</span>
+                  </div>
+                  <p className="text-xl font-bold text-center">
+                    {list.requirement}
+                  </p>
                 </div>
-                <p className="text-2xl font-bold">No</p>
-              </div>
 
-              <div className="text-4xl">|</div>
-
-              <div className="flex flex-col items-center justify-center gap-3">
-                <div className="flex items-center gap-3">
-                  <GiTargetPrize size={40} />
-                  <span className="text-2xl font-bold">Rewards</span>
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex items-center gap-3">
+                    <GiTargetPrize size={40} />
+                    <span className="text-2xl font-bold">Rewards</span>
+                  </div>
+                  <p className="text-xl font-bold text-center">
+                    {list.rewards}
+                  </p>
                 </div>
-                <p className="text-2xl font-bold">Certificate</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <div className="flex items-center lg:items-start">
+            <h3>
+              Course <span>Content</span>
+            </h3>
           </div>
 
-          <div className="flex flex-col items-center lg:items-start gap-8 py-16 px-28">
-            <h3>Course <span>Content</span></h3>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-10 px-28">
-            <div className="flex items-center gap-5">
-              <p className="p-3 bg-secondary rounded-full text-background">1</p>
-              <div className="flex flex-col items-center lg:items-start gap-2">
-                <p className="text-3xl font-playfair font-bold">
-                  IPO&apos;s(Initial Public Offering) Investing
-                </p>
-                <ul
-                  role="list"
-                  className="marker:text-secondary list-disc pl-5">
-                  <li>Introduction</li>
-                  <li>How to Select and how to apply</li>
-                </ul>
+          <div className="flex flex-wrap gap-10 item-center justify-center p-3 mt-5">
+            {data.courseContents.map((list) => (
+              <div
+                key={list.courseTitle}
+                className="flex flex-col p-5 bg-background rounded-lg min-w-[10rem] max-w-[16rem] gap-3 shadow-md shadow-primary">
+                <p className="text-center text-xl text-secondary font-bold">{list.courseTitle}</p>
+                <p>{list.courseContentDetails}</p>
               </div>
-            </div>
-
-            <div className="flex items-center gap-5">
-              <p className="p-3 bg-secondary rounded-full text-background">2</p>
-              <div className="flex flex-col items-center justify-center lg:items-start gap-2">
-                <p className="text-3xl font-playfair font-bold">Mutual Fund</p>
-                <ul
-                  role="list"
-                  className="marker:text-secondary list-disc pl-5">
-                  <li>How to select</li>
-                  <li>How to invest</li>
-                  <li>SIP Vs Lumsum</li>
-                  <li>When to make transitions</li>
-                  <li>Grey Areas</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-5">
-              <p className="p-3 bg-secondary rounded-full text-background">3</p>
-              <div className="flex flex-col items-center lg:items-start gap-2">
-                <p className="text-3xl font-playfair font-bold">
-                  Smarter than FD&apos;s (Bonds)
-                </p>
-                <ul
-                  role="list"
-                  className="marker:text-secondary list-disc pl-5">
-                  <li>Investing in bonds Longer or Shorter dated bonds</li>
-                  <li>How to select</li>
-                  <li>When to invest</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-5">
-              <p className="p-3 bg-secondary rounded-full text-background">4</p>
-              <div className="flex flex-col items-center lg:items-start gap-2">
-                <p className="text-3xl font-playfair font-bold">
-                  Fundamental Analysis
-                </p>
-                <ul
-                  role="list"
-                  className="marker:text-secondary list-disc pl-5">
-                  <li>Portfolio during different market scenarios</li>
-                  <li>Stocks for Long Term</li>
-                  <li>Challenges, how to manage them</li>
-                  <li>How much I can make, the magic Figure</li>
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

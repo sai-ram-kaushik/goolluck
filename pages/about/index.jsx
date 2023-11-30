@@ -102,7 +102,7 @@ const index = () => {
             </li>
           </ul>
 
-          <p className="lg:max-w-[80rem] text-xl">
+          <p className="lg:max-w-[80rem] text-xl text-justify">
             At Goolluck Investments, we don’t just teach; we empower. Choose a
             training experience that goes beyond theory, providing you with the
             practical knowledge and tools needed to thrive in the dynamic world
@@ -117,7 +117,7 @@ const index = () => {
           </h3>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-10">
           {team.map((list) => (
             <div key={list.key} className="flex flex-col items-center gap-2">
               <Image
@@ -129,7 +129,7 @@ const index = () => {
               />
               <p className="text-2xl text-secondary font-bold">{list.name}</p>
               {/* <p className="font-bold">{list.designation}</p> */}
-              <p className="max-w-[400px] text-center text-sm lg:text-lg">
+              <p className="max-w-[400px] text-justify text-sm lg:text-lg">
                 {list.description}
               </p>
             </div>

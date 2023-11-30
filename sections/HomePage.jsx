@@ -14,12 +14,12 @@ const HomePage = () => {
       <div className='container mx-auto w-full h-full'>
         <div className='flex flex-col lg:flex-row items-center justify-between gap-20 lg:gap-40 w-full h-full'>
           <div className='flex flex-col items-center lg:items-start lg:w-[649.81px] gap-[50px]'>
-            <h1 className='leading-[4.5rem]'>
+            <h1 className='leading-[2.5rem] lg:leading-[4.5rem]'>
               Goolluck Investments -{" "}
               <span>Stock Market Training Institute</span>
             </h1>
 
-            <p className='text-center lg:text-start'>
+            <p className='text-justify lg:text-start'>
               Goolluck Investments is a portfolio advisory firm and stock market training
               institute. Here, you will learn about real time trading and
               strategies used by the traders of our institution. Learn directly

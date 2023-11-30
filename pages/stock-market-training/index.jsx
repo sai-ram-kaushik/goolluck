@@ -11,20 +11,20 @@ import {
 import Link from "next/link";
 import Scroll from "@/components/Scroll";
 
-const Stock_Market_Training = ( {data} ) => {
+const Stock_Market_Training = ({ data }) => {
   return (
     <div className="w-full p-5">
       <TransitionEffect />
       <Scroll />
       <div className="container mx-auto">
         <div className="flex items-center justify-center mt-10">
-          <p className="text-4xl font-playfair font-bold">
+          <p className="text-4xl font-playfair text-center font-bold">
             Instructions for New Upcoming Batch
           </p>
         </div>
 
         <div className="flex flex-col items-center text-center lg:text-start mt-5">
-          <p className="lg:max-w-[80rem] text-lg">
+          <p className="lg:max-w-[80rem] text-justify text-lg">
             Welcome to Goolluck Investments: Stock market training Institute,
             where Our mission is to convert your financial dreams into
             actionable plans and equip you with the knowledge and skills needed
@@ -35,7 +35,7 @@ const Stock_Market_Training = ( {data} ) => {
 
           <ul
             role="list"
-            className="marker:text-secondary list-decimal lg:max-w-[70rem] text-lg">
+            className="marker:text-secondary list-decimal lg:max-w-[70rem] text-justify text-lg p-5 lg:p-0">
             <li>
               The first class serves as a trial or complementary session for you
               to get a feel for our teaching methods and course content.
@@ -81,9 +81,11 @@ const Stock_Market_Training = ( {data} ) => {
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
             {data.stockMarketCourses.map((list) => (
               <div
-                className="flex flex-col items-center lg:items-start gap-2 border border-secondary p-5 rounded-xl"
+                className="flex flex-col items-center border border-secondary p-5 rounded-xl"
                 key={list.title}>
-                <Link href={`/stock-market-training/${list.slug}`}>
+                <Link
+                  href={`/stock-market-training/${list.slug}`}
+                  className="flex flex-col items-center gap-3">
                   <Image
                     src={list.backDrop.url}
                     width={300}
@@ -94,10 +96,9 @@ const Stock_Market_Training = ( {data} ) => {
                   <p className="text-xl text-center lg:text-start font-bold">
                     {list.title}
                   </p>
-                  <p className="lg:w-[15rem] text-center lg:text-start">
-                    {/* {list.desc.slice(0, 100)}{" "}
-                    {list.desc.length > 100 ? "..." : ""} */}
-                    {list.desc}
+                  <p className="lg:w-[15rem] text-justify">
+                    {list.desc.slice(0, 100)}{" "}
+                    {list.desc.length > 100 ? "..." : ""}
                   </p>
                 </Link>
               </div>
@@ -213,7 +214,7 @@ const Stock_Market_Training = ( {data} ) => {
 
 export default Stock_Market_Training;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const data = await getStockMarketTraining();
   return {
     props: {

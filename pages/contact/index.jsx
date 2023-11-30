@@ -75,7 +75,7 @@ const Conatct = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center mt-5 lg:mt-0">
+          <div className="flex flex-col items-center mt-5 gap-5 lg:mt-0">
             <p className="text-xl lg:text-4xl font-bold font-playfair">
               Our teams are here to help
             </p>
