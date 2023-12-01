@@ -7,14 +7,7 @@ import { GiTargetPrize } from "react-icons/gi";
 import investor from "@/public/assets/investor.jpg";
 import { getStockMarketCourseDetails } from "@/lib/data";
 
-export const getStaticPaths = () => {
-  return {
-    paths: [],
-    fallback: true,
-  };
-};
-
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const data = await getStockMarketCourseDetails(params.slug);
   return {
     props: {
@@ -24,23 +17,24 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const DynamicStockMarketTraining = ({ data }) => {
+  if (!data || !Array.isArray(data.stockMarketCourses)) {
+    return <div>No course data available</div>;
+  }
   return (
     <div className="w-full p-5">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-28">
-          <div className="flex flex-col items-center lg:items-start">
-            {data.stockMarketCourses.map((list) => (
-              <div key={list.title} className="flex flex-col gap-3">
+      {data.stockMarketCourses.map((list, index) => (
+        <div className="container mx-auto" key={index}>
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-28">
+            <div className="flex flex-col items-center lg:items-start">
+              <div key={list.id} className="flex flex-col gap-3">
                 <h2>{list.title}</h2>
                 <p className="lg:max-w-[30rem] text-justify text-lg">
                   {list.desc}
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div>
-            {data.stockMarketCourses.map((list) => (
+            <div>
               <Image
                 src={list.backDrop.url}
                 key={list.id}
@@ -49,15 +43,13 @@ const DynamicStockMarketTraining = ({ data }) => {
                 height={500}
                 className="rounded-3xl"
               />
-            ))}
+            </div>
           </div>
-        </div>
 
-        <div className="mt-10">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-24 bg-background shadow-xl rounded-lg p-5">
-            {data.stockMarketCourses.map((list) => (
+          <div className="mt-10">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-2 lg:gap-24 bg-background shadow-xl rounded-lg p-5">
               <div
-                key={list.slug}
+                key={list.id}
                 className="flex flex-col lg:flex-row items-center justify-center gap-20">
                 <div className="flex flex-col items-center justify-center gap-3">
                   <div className="flex items-center gap-3">
@@ -103,29 +95,31 @@ const DynamicStockMarketTraining = ({ data }) => {
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10">
-          <div className="flex items-center lg:items-start">
-            <h3>
-              Course <span>Content</span>
-            </h3>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-10 item-center justify-center p-3 mt-5">
-            {data.courseContents.map((list) => (
-              <div
-                key={list.courseTitle}
-                className="flex flex-col p-5 bg-background rounded-lg min-w-[10rem] max-w-[16rem] gap-3 shadow-md shadow-primary">
-                <p className="text-center text-xl text-secondary font-bold">{list.courseTitle}</p>
-                <p>{list.courseContentDetails}</p>
-              </div>
-            ))}
+          <div className="mt-10">
+            <div className="flex items-center lg:items-start">
+              <h3>
+                Course <span>Content</span>
+              </h3>
+            </div>
+
+            <div className="flex flex-wrap gap-10 item-center justify-center p-3 mt-5">
+              {list.courseContents.map((course) => (
+                <div
+                  className="flex flex-col p-5 bg-background rounded-lg min-w-[10rem] max-w-[16rem] gap-3 shadow-md shadow-primary"
+                  key={course.id}>
+                  <p className="text-center text-xl text-secondary font-bold">
+                    {course.courseTitle}
+                  </p>
+                  <p>{course.courseContentDetails}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
