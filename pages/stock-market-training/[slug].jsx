@@ -4,8 +4,8 @@ import { TbTimeDuration30 } from "react-icons/tb";
 import { MdMode } from "react-icons/md";
 import { RiPriceTag3Fill } from "react-icons/ri";
 import { GiTargetPrize } from "react-icons/gi";
-import investor from "@/public/assets/investor.jpg";
 import { getStockMarketCourseDetails } from "@/lib/data";
+import TransitionEffect from "@/components/TransitionEffect";
 
 export const getServerSideProps = async ({ params }) => {
   const data = await getStockMarketCourseDetails(params.slug);
@@ -22,6 +22,7 @@ const DynamicStockMarketTraining = ({ data }) => {
   }
   return (
     <div className="w-full p-5">
+      <TransitionEffect />
       {data.stockMarketCourses.map((list, index) => (
         <div className="container mx-auto" key={index}>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-28">
@@ -59,6 +60,8 @@ const DynamicStockMarketTraining = ({ data }) => {
                   <p className="text-xl font-bold">{list.duration}</p>
                 </div>
 
+                <div className="text-3xl hidden lg:block">|</div>
+
                 <div className="flex flex-col items-center justify-center gap-3">
                   <div className="flex items-center gap-3">
                     <MdMode size={40} />
@@ -67,6 +70,8 @@ const DynamicStockMarketTraining = ({ data }) => {
                   <p className="text-xl font-bold text-center">{list.mode}</p>
                 </div>
 
+                <div className="text-3xl hidden lg:block">|</div>
+
                 <div className="flex flex-col items-center justify-center gap-3">
                   <div className="flex items-center gap-3">
                     <RiPriceTag3Fill size={40} />
@@ -74,6 +79,8 @@ const DynamicStockMarketTraining = ({ data }) => {
                   </div>
                   <p className="text-xl font-bold">{list.price}</p>
                 </div>
+
+                <div className="text-3xl hidden lg:block">|</div>
 
                 <div className="flex flex-col items-center justify-center gap-3">
                   <div className="flex items-center gap-3">
@@ -84,6 +91,8 @@ const DynamicStockMarketTraining = ({ data }) => {
                     {list.requirement}
                   </p>
                 </div>
+
+                <div className="text-3xl hidden lg:block">|</div>
 
                 <div className="flex flex-col items-center justify-center gap-3">
                   <div className="flex items-center gap-3">
@@ -99,7 +108,7 @@ const DynamicStockMarketTraining = ({ data }) => {
           </div>
 
           <div className="mt-10">
-            <div className="flex items-center lg:items-start">
+            <div className="flex items-center justify-center">
               <h3>
                 Course <span>Content</span>
               </h3>
@@ -107,13 +116,9 @@ const DynamicStockMarketTraining = ({ data }) => {
 
             <div className="flex flex-wrap gap-10 item-center justify-center p-3 mt-5">
               {list.courseContents.map((course) => (
-                <div
-                  className="flex flex-col p-5 bg-background rounded-lg min-w-[10rem] max-w-[16rem] gap-3 shadow-md shadow-primary"
-                  key={course.id}>
-                  <p className="text-center text-xl text-secondary font-bold">
-                    {course.courseTitle}
-                  </p>
-                  <p>{course.courseContentDetails}</p>
+                <div key={course.id} className="flex flex-col items-center text-center bg-background gap-3 p-5 shadow-xl border border-primary rounded-xl min-w-[10rem] max-w-[20rem]">
+                  <p className="text-secondary font-bold text-xl">{course.courseTitle}</p>
+                  <p className="font-semibold text-lg text-justify">{course.courseContentDetails}</p>
                 </div>
               ))}
             </div>
