@@ -8,7 +8,7 @@ import design from "@/public/assets/design.png";
 import TransitionEffect from "@/components/TransitionEffect";
 const HomePage = () => {
   return (
-    <section className='w-full lg:h-[85vh] p-5'>
+    <section className='w-full py-10 p-5'>
       <TransitionEffect />
       <Image src={design} alt='design' className='absolute top-0 left-0' />
       <div className='container mx-auto w-full h-full'>
