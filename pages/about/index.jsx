@@ -62,7 +62,7 @@ const index = () => {
 
           <ul
             role="list"
-            className="marker:text-sky-400 list-decimal lg:max-w-[70rem] text-xl text-justify">
+            className="marker:text-secondary list-decimal lg:max-w-[70rem] text-xl text-justify p-5 lg:p-0">
             <li>
               Learn from champions: Gain a competitive edge, and Benefit
               yourself from training by the 19 times winner of CNBC Bulls Eye
