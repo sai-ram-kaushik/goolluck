@@ -12,16 +12,16 @@ export const menuList = [
     path: "/stock-market-training",
     key: "Stock Market Training",
   },
-  {
-    label: "Investment Platform",
-    path: "/investment-platform",
-    key: "Investment Platform",
-  },
-  {
-    label: "Knowledge Center",
-    path: "/knowledge-center",
-    key: "Knowledge Center",
-  },
+  // {
+  //   label: "Investment Platform",
+  //   path: "/investment-platform",
+  //   key: "Investment Platform",
+  // },
+  // {
+  //   label: "Knowledge Center",
+  //   path: "/knowledge-center",
+  //   key: "Knowledge Center",
+  // },
   {
     label: "Life @ Goolluck",
     path: "/life-at-goolluck",

@@ -1,6 +1,3 @@
-/** @format */
-
-import Typed from "react-typed";
 import Image from "next/image";
 import vector from "@/public/assets/8.png";
 import Button from "@/components/Button";
@@ -9,7 +6,7 @@ import TransitionEffect from "@/components/TransitionEffect";
 const HomePage = () => {
   return (
     <section className='w-full py-10 p-5'>
-      <TransitionEffect />
+      <TransitionEffect /> 
       <Image src={design} alt='design' className='absolute top-0 left-0' />
       <div className='container mx-auto w-full h-full'>
         <div className='flex flex-col lg:flex-row items-center justify-between gap-20 lg:gap-40 w-full h-full'>
