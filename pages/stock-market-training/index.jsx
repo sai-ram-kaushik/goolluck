@@ -1,5 +1,5 @@
 import TransitionEffect from "@/components/TransitionEffect";
-import { getStockMarketTraining } from "@/lib/data";
+// import { getStockMarketTraining } from "@/lib/data";
 import Image from "next/image";
 import {
   life_at_goolluck_training_iit,
@@ -8,14 +8,14 @@ import {
   life_at_goolluck_training_imt,
   life_at_goolluck_training_offline,
 } from "@/constants";
-import Link from "next/link";
-import Scroll from "@/components/Scroll";
+// import Link from "next/link";
+// import Scroll from "@/components/Scroll";
 
 const Stock_Market_Training = ({ data }) => {
   return (
     <div className="w-full p-5">
       <TransitionEffect />
-      <Scroll />
+      {/* <Scroll /> */}
       <div className="container mx-auto">
         <div className="flex items-center justify-center mt-10">
           <p className="text-4xl font-playfair text-center font-bold">
@@ -71,13 +71,13 @@ const Stock_Market_Training = ({ data }) => {
           </ul>
         </div>
 
-        <div className="flex items-center justify-center mt-10">
+        {/* <div className="flex items-center justify-center mt-10">
           <h3>
             Stock <span>Market Courses</span>
           </h3>
-        </div>
+        </div> */}
 
-        <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
+        {/* <div className="flex flex-wrap items-center justify-center gap-5 mt-10">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
             {data.stockMarketCourses.map((list) => (
               <div
@@ -104,7 +104,7 @@ const Stock_Market_Training = ({ data }) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className="flex items-center justify-center mt-10">
           <h3>Previous Training Sessions</h3>
@@ -214,11 +214,11 @@ const Stock_Market_Training = ({ data }) => {
 
 export default Stock_Market_Training;
 
-export const getStaticProps = async () => {
-  const data = await getStockMarketTraining();
-  return {
-    props: {
-      data,
-    },
-  };
-};
+// export const getStaticProps = async () => {
+//   const data = await getStockMarketTraining();
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };

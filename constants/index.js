@@ -207,6 +207,7 @@ export const life_at_goolluck_training_offline = [
 ];
 
 export const life_at_goolluck = [
+  { photo: "/assets/life_at_goolluck/recreational_activities/rohit.jpeg", key: 45 },
   { photo: "/assets/life_at_goolluck/recreational_activities/m1.jpeg", key: 2 },
   { photo: "/assets/life_at_goolluck/recreational_activities/m2.jpeg", key: 3 },
   { photo: "/assets/life_at_goolluck/recreational_activities/m3.jpeg", key: 4 },

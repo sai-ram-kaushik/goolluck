@@ -1,10 +1,11 @@
 import TransitionEffect from "@/components/TransitionEffect";
 import { team } from "@/constants";
+import rohit from "@/public/assets/team/rohit.png";
 import Image from "next/image";
 const index = () => {
   return (
     <section className="w-full p-5">
-      <TransitionEffect />
+      {/* <TransitionEffect /> */}
       <div className="container mx-auto">
         <div className="flex items-center justify-center">
           <h3>
@@ -62,7 +63,8 @@ const index = () => {
 
           <ul
             role="list"
-            className="marker:text-secondary list-decimal lg:max-w-[70rem] text-xl text-justify p-5 lg:p-0">
+            className="marker:text-secondary list-decimal lg:max-w-[70rem] text-xl text-justify p-5 lg:p-0"
+          >
             <li>
               Learn from champions: Gain a competitive edge, and Benefit
               yourself from training by the 19 times winner of CNBC Bulls Eye
@@ -115,6 +117,28 @@ const index = () => {
           <h3>
             Our <span>Team</span>
           </h3>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2 mt-5">
+            <Image
+              src={rohit}
+              alt="rohit"
+              width={250}
+              height={250}
+              className="rounded-full border-2 border-secondary"
+            />
+            <p className="text-2xl text-secondary font-bold">Rohit Mongia</p>
+            {/* <p className="font-bold">{list.designation}</p> */}
+            <p className="max-w-[600px] text-justify text-sm lg:text-lg">
+              Possesses over 20+ years of Stock Market Trader. 19 Times winner
+              of CNBC Bulls Eye Contest (Best Portfolio Manager Contest in the
+              Country). Derivatives Expert with Zee Business Live News Channel.
+              Equity Expert with Investor India Magzine. Former Trainer at State
+              Street Corp US for Hedge fund Training. Ex-National Head for Stock
+              Broking Arm of Bajaj Capital.
+            </p>
+          </div>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-10">
