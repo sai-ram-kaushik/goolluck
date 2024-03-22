@@ -5,7 +5,7 @@ import Image from "next/image";
 const index = () => {
   return (
     <section className="w-full p-5">
-      {/* <TransitionEffect /> */}
+      <TransitionEffect />
       <div className="container mx-auto">
         <div className="flex items-center justify-center">
           <h3>

@@ -23,6 +23,10 @@
   span {
     @apply text-secondary;
   }
+
+  input {
+    @apply bg-transparent outline-none p-2  rounded-xl;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -37,4 +41,14 @@
   background-color: #fd8c02;
   border-radius: 1rem;
   background-clip: content-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
