@@ -74,7 +74,7 @@ const PortfolioCalculator = () => {
             onChange={handleGrowthRateChange}
           />
 
-          <Button children="Calculate" onClick={calculatePortfolioValues} />
+          <Button onClick={calculatePortfolioValues}>Calculate</Button>
         </div>
 
         <div className="overflow-x-auto mt-4 rounded-xl">
