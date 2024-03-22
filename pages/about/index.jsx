@@ -131,7 +131,7 @@ const index = () => {
             <p className="text-2xl text-secondary font-bold">Rohit Mongia</p>
             {/* <p className="font-bold">{list.designation}</p> */}
             <p className="max-w-[600px] text-justify text-sm lg:text-lg">
-              Possesses over 20+ years of Stock Market Trader. 19 Times winner
+              Possesses over 20+ years of Stock Market Investing Experience. 19 Times winner
               of CNBC Bulls Eye Contest (Best Portfolio Manager Contest in the
               Country). Derivatives Expert with Zee Business Live News Channel.
               Equity Expert with Investor India Magzine. Former Trainer at State

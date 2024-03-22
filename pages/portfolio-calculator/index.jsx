@@ -3,22 +3,34 @@
 import Button from "@/components/Button";
 import { useState } from "react";
 
+// Function to format numbers in Indian numbering system style
+const formatNumber = (number) => {
+  const formattedNumber = new Intl.NumberFormat("en-IN").format(number);
+  return formattedNumber;
+};
+
 const PortfolioCalculator = () => {
-  const [sipAmount, setSipAmount] = useState(50000);
-  const [currentPortfolio, setCurrentPortfolio] = useState(3000000);
-  const [growthRate, setGrowthRate] = useState(0.14);
+  const [sipAmount, setSipAmount] = useState(10000);
+  const [currentPortfolio, setCurrentPortfolio] = useState(100000);
+  const [growthRate, setGrowthRate] = useState(14); // Growth rate in percentage
   const [portfolioValues, setPortfolioValues] = useState([]);
 
   const handleSipAmountChange = (e) => {
-    setSipAmount(parseFloat(e.target.value));
+    // Remove commas from the input value before updating state
+    const cleanedValue = e.target.value.replace(/,/g, '');
+    setSipAmount(parseFloat(cleanedValue));
   };
+  
 
   const handleCurrentPortfolioChange = (e) => {
-    setCurrentPortfolio(parseFloat(e.target.value));
+    // Remove commas from the input value before updating state
+    const cleanedValue = e.target.value.replace(/,/g, '');
+    setCurrentPortfolio(parseFloat(cleanedValue));
   };
 
   const handleGrowthRateChange = (e) => {
-    setGrowthRate(parseFloat(e.target.value));
+    // Since growth rate is input as percentage, round it to the tens digit when setting state
+    setGrowthRate(Math.round(parseFloat(e.target.value) * 10) / 10);
   };
 
   const calculatePortfolioValues = () => {
@@ -28,15 +40,15 @@ const PortfolioCalculator = () => {
     let currentValue = currentPortfolio;
 
     for (let i = 1; i <= periods; i++) {
-      const futureValue = currentValue * (1 + growthRate);
+      const futureValue = currentValue * (1 + growthRate / 100);
       currentValue += sipAmount;
       calculatedValues.push({
         period: i,
-        initialValue: currentValue - sipAmount,
-        futureValue: futureValue,
-        sipAmount: sipAmount,
-        growthRate: growthRate,
-        portfolioValue: currentValue,
+        initialValue: formatNumber(currentValue - sipAmount), // Format numbers with Indian numbering system style
+        futureValue: formatNumber(futureValue), // Format numbers with Indian numbering system style
+        sipAmount: formatNumber(sipAmount), // Format numbers with Indian numbering system style
+        growthRate: growthRate.toFixed(1), // Display growth rate up to the tens digit
+        portfolioValue: formatNumber(currentValue), // Format numbers with Indian numbering system style
       });
     }
 
@@ -63,14 +75,14 @@ const PortfolioCalculator = () => {
             onChange={handleCurrentPortfolioChange}
           />
 
-          <p>Growth Rate (in Decimal):</p>
+          <p>Growth Rate (in Percentage):</p>
           <input
             type="number"
-            step="0.01"
+            step="0.1"
             min="0"
-            max="1"
+            max="100" // Maximum value for percentage
             className="input-field"
-            value={growthRate}
+            value={growthRate} // Display growth rate up to the tens digit
             onChange={handleGrowthRateChange}
           />
 
@@ -108,19 +120,19 @@ const PortfolioCalculator = () => {
                     {data.period}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-black">
-                    {data.initialValue.toFixed(2)}
+                    {data.initialValue}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-black">
-                    {data.futureValue.toFixed(2)}
+                    {data.futureValue}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-black">
-                    {data.sipAmount.toFixed(2)}
+                    {data.sipAmount}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-black">
-                    {(data.growthRate * 100).toFixed(2)}%
+                    {data.growthRate}%
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-black">
-                    {data.portfolioValue.toFixed(2)}
+                    {data.portfolioValue}
                   </td>
                 </tr>
               ))}
