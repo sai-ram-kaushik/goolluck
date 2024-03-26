@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/assets/goolluck_investments_logo.png";
+import logo from "@/public/assets/logo.png";
 import { menuList } from "@/constants";
 import { socials } from "@/constants";
 import { AiOutlineMail } from "react-icons/ai";
@@ -11,14 +11,23 @@ const Footer = () => {
   return (
     <footer className="w-full bg-footer p-5 py-5 mt-3">
       <div className="container mx-auto">
-        <div className="flex items-center justify-center">
-          <Image src={logo} alt="logo" width={200} height={200} />
-        </div>
+        <Link href="/">
+          <div className="flex items-center justify-center">
+            <Image src={logo} alt="logo" width={200} height={200} />
+          </div>
+        </Link>
 
         <div className="p-8 border-t border-gray-800 border-b flex flex-wrap items-center gap-10 lg:gap-28 justify-center mt-10">
           <div className="flex items-center gap-3">
             <AiOutlineMail size={20} className="text-secondary" />
-            <p>goollucktraining@gmail.com</p>
+            <div className="flex flex-col items-start">
+              <a href="mailto:info@goolluck.in">
+                <p>info@goolluck.in /</p>
+              </a>
+              <a href="mailto:goolluck1@outlook.com">
+                <p>goolluck1@outlook.com</p>
+              </a>
+            </div>
           </div>
 
           <div className="flex items-center gap-3">
@@ -47,7 +56,8 @@ const Footer = () => {
             {socials.map((link) => (
               <div
                 key={link.key}
-                className="bg-secondary text-black rounded-full p-3">
+                className="bg-secondary text-black rounded-full p-3"
+              >
                 <a href={link.path} target="_blank">
                   <div>{link.icon}</div>
                 </a>

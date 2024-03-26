@@ -28,8 +28,8 @@ export const menuList = [
     key: "Life @ Goolluck",
   },
   {
-    label: "Portfolio Calculator",
-    path: "/portfolio-calculator",
+    label: "Compounded Portfolio",
+    path: "/compounded-portfolio",
     key: "Portfolio Calculator",
   },
   { label: "Contact Us", path: "/contact", key: "Contact Us" },
@@ -172,7 +172,7 @@ export const life_at_goolluck_training_mdi = [
   { photo: "/assets/life_at_goolluck/mdi/mdi2.jpg", key: 2 },
   { photo: "/assets/life_at_goolluck/mdi/mdi3.jpg", key: 3 },
   { photo: "/assets/life_at_goolluck/mdi/mdi4.jpg", key: 4 },
-  { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg", key: 5 },
+  // { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg", key: 5 },
   { photo: "/assets/life_at_goolluck/mdi/mdi6.jpg", key: 6 },
   { photo: "/assets/life_at_goolluck/mdi/mdi7.JPG", key: 7 },
   { photo: "/assets/life_at_goolluck/mdi/mdi8.JPG", key: 8 },
@@ -197,7 +197,9 @@ export const life_at_goolluck_training_imt = [
   { photo: "/assets/life_at_goolluck/imt/imt1.jpg", key: 1 },
   { photo: "/assets/life_at_goolluck/imt/imt2.jpg", key: 2 },
   { photo: "/assets/life_at_goolluck/imt/imt3.jpg", key: 3 },
-  { photo: "/assets/life_at_goolluck/imt/imt4.jpg", key: 4 },
+  // { photo: "/assets/life_at_goolluck/imt/imt4.jpg", key: 4 },
+  { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg", key: 5 },
+
 ];
 
 export const life_at_goolluck_training_offline = [

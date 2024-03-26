@@ -12,7 +12,7 @@ const SplashScreen = ({ finishLoading }) => {
 
     loader.add({
       targets: "#logo",
-      delay: 1500,
+      delay: 500,
       // scale: 1,
       duration: 2000,
       easing: "easeInOutExpo",
@@ -21,7 +21,7 @@ const SplashScreen = ({ finishLoading }) => {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 5);
+    const timeout = setTimeout(() => setIsMounted(true), 2);
     animate();
     return () => clearTimeout(timeout);
   });

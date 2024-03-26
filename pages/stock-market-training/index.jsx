@@ -132,7 +132,7 @@ const Stock_Market_Training = ({ data }) => {
 
             <div className="flex flex-col gap-5 items-center">
               <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
-                Workshop at <span>MDI, Gurgaon</span>
+                Corporate Training, <span>New Delhi</span>
               </p>
               <div className="flex flex-wrap items-center justify-center gap-5 cursor-pointer">
                 {life_at_goolluck_training_mdi.map((item) => (
@@ -170,7 +170,7 @@ const Stock_Market_Training = ({ data }) => {
 
             <div className="flex flex-col gap-5 items-center">
               <p className="text-2xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
-                Workshop at <span>IMT, Ghaziabad</span>
+                Workshop at <span>MDI, Murshidabad</span>
               </p>
               <div className="flex flex-wrap justify-center items-center gap-5 cursor-pointer">
                 {life_at_goolluck_training_imt.map((item) => (
