@@ -12,16 +12,6 @@ export const menuList = [
     path: "/stock-market-training",
     key: "Stock Market Training",
   },
-  // {
-  //   label: "Investment Platform",
-  //   path: "/investment-platform",
-  //   key: "Investment Platform",
-  // },
-  // {
-  //   label: "Knowledge Center",
-  //   path: "/knowledge-center",
-  //   key: "Knowledge Center",
-  // },
   {
     label: "Life @ Goolluck",
     path: "/life-at-goolluck",
@@ -30,6 +20,11 @@ export const menuList = [
   {
     label: "Compounded Portfolio",
     path: "/compounded-portfolio",
+    key: "Portfolio Calculator",
+  },
+  {
+    label: "Portfolio",
+    path: "/portfolio",
     key: "Portfolio Calculator",
   },
   { label: "Contact Us", path: "/contact", key: "Contact Us" },
@@ -199,7 +194,6 @@ export const life_at_goolluck_training_imt = [
   { photo: "/assets/life_at_goolluck/imt/imt3.jpg", key: 3 },
   // { photo: "/assets/life_at_goolluck/imt/imt4.jpg", key: 4 },
   { photo: "/assets/life_at_goolluck/mdi/mdi5.jpg", key: 5 },
-
 ];
 
 export const life_at_goolluck_training_offline = [
@@ -218,95 +212,95 @@ export const life_at_goolluck = [
     photo: "/assets/life_at_goolluck/recreational_activities/rohit.jpeg",
     key: 45,
   },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m1.jpeg", key: 2 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m2.jpeg", key: 3 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m3.jpeg", key: 4 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m4.jpeg", key: 5 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m5.jpeg", key: 6 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/m6.jpeg", key: 7 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/1.jpeg", key: 8 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/2.jpeg", key: 9 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/3.jpeg", key: 10 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/4.jpeg", key: 11 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/5.jpeg", key: 12 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/6.jpg", key: 13 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/7.jpg", key: 14 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/8.jpeg", key: 15 },
-  { photo: "/assets/life_at_goolluck/recreational_activities/9.jpeg", key: 16 },
+  { photo: "/assets/new/m2.jpeg", key: 3 },
+  { photo: "/assets/new/m1.jpeg", key: 2 },
+  { photo: "/assets/new/m5.jpeg", key: 6 },
+  { photo: "/assets/new/m6.jpeg", key: 7 },
+  { photo: "/assets/new/m4.jpeg", key: 5 },
+  { photo: "/assets/new/m3.jpeg", key: 4 },
+  // { photo: "/assets/new/1.jpeg", key: 8 },
+  // { photo: "/assets/new/2.jpeg", key: 9 },
+  // { photo: "/assets/new/3.jpeg", key: 10 },
+  // { photo: "/assets/new/4.jpeg", key: 11 },
+  // { photo: "/assets/new/5.jpeg", key: 12 },
+  { photo: "/assets/new/6.jpg", key: 13 },
+  { photo: "/assets/new/7.jpg", key: 14 },
+  { photo: "/assets/new/8.jpeg", key: 15 },
+  { photo: "/assets/new/9.jpeg", key: 16 },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/10.jpeg",
+    photo: "/assets/new/10.jpeg",
     key: 17,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/11.jpeg",
+    photo: "/assets/new/11.jpeg",
     key: 18,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/12.jpeg",
+    photo: "/assets/new/12.jpeg",
     key: 19,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/13.jpeg",
+    photo: "/assets/new/13.jpeg",
     key: 20,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/14.jpeg",
+    photo: "/assets/new/14.jpeg",
     key: 21,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/15.jpeg",
+    photo: "/assets/new/15.jpeg",
     key: 22,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/16.jpeg",
+    photo: "/assets/new/16.jpeg",
     key: 23,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/17.jpeg",
+    photo: "/assets/new/17.jpeg",
     key: 24,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/18.jpeg",
+    photo: "/assets/new/18.jpeg",
     key: 25,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/19.jpeg",
+    photo: "/assets/new/19.jpeg",
     key: 26,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/20.jpeg",
+    photo: "/assets/new/20.jpeg",
     key: 27,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/21.jpeg",
+    photo: "/assets/new/21.jpeg",
     key: 28,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/22.jpeg",
+    photo: "/assets/new/22.jpeg",
     key: 29,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/23.jpeg",
+    photo: "/assets/new/23.jpeg",
     key: 30,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/24.jpeg",
+    photo: "/assets/new/24.jpeg",
     key: 31,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/25.jpeg",
+    photo: "/assets/new/25.jpeg",
     key: 32,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/26.jpeg",
+    photo: "/assets/new/26.jpeg",
     key: 33,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/27.jpeg",
+    photo: "/assets/new/27.jpeg",
     key: 34,
   },
   {
-    photo: "/assets/life_at_goolluck/recreational_activities/28.jpeg",
+    photo: "/assets/new/28.jpeg",
     key: 35,
   },
 ];

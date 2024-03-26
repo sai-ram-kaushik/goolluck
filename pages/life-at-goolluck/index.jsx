@@ -9,7 +9,7 @@ const LifeAtGoolluck = () => {
         <div className="flex flex-wrap items-center justify-center gap-5">
           {life_at_goolluck.map((item) => (
             <div key={item.key}>
-              <Image src={item.photo} alt="photos" width={250} height={250} className="rounded-lg" />
+              <img src={item.photo} alt="photos" width={250} height={250}  className="rounded-lg" />
             </div>
           ))}
         </div>

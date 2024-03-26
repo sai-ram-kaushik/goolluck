@@ -1,27 +1,35 @@
+"use client";
 import Button from "@/components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Function to format numbers in Indian numbering system style
 const formatNumber = (number) => {
+  if (typeof number === "string") return number;
   const formattedNumber = new Intl.NumberFormat("en-IN").format(number);
   return formattedNumber;
 };
 
 const PortfolioCalculator = () => {
-  const [sipAmount, setSipAmount] = useState(10000);
+  const [sipAmount, setSipAmount] = useState(10000); // Initial value
   const [currentPortfolio, setCurrentPortfolio] = useState(100000);
   const [growthRate, setGrowthRate] = useState(14); // Growth rate in percentage
   const [period, setPeriod] = useState(40); // Default period set to 40
   const [portfolioValues, setPortfolioValues] = useState([]);
 
   const handleSipAmountChange = (e) => {
-    const cleanedValue = e.target.value.replaceAll(",", ""); // Remove commas from the input value
-    setSipAmount(parseFloat(cleanedValue));
+    if (e.target.value) {
+      // Check if there's a value
+      const cleanedValue = e.target.value.replace(/,/g, "");
+      setSipAmount(parseFloat(cleanedValue));
+    }
   };
 
   const handleCurrentPortfolioChange = (e) => {
-    const cleanedValue = e.target.value.replaceAll(",", ""); // Remove commas from the input value
-    setCurrentPortfolio(parseFloat(cleanedValue));
+    if (e.target.value) {
+      // Check if there's a value
+      const cleanedValue = e.target.value.replace(/,/g, "");
+      setCurrentPortfolio(parseFloat(cleanedValue));
+    }
   };
 
   const handleGrowthRateChange = (e) => {
@@ -38,25 +46,43 @@ const PortfolioCalculator = () => {
 
   const calculatePortfolioValues = () => {
     const calculatedValues = [];
-    let currentValue = currentPortfolio;
+    let previousPortfolioValue = currentPortfolio; // Initial portfolio value
 
     for (let i = 1; i <= period; i++) {
-      const futureValue = currentValue * (1 + growthRate / 100);
-      currentValue += sipAmount;
+      const futureValue = previousPortfolioValue * (1 + growthRate / 100);
+      const sipAmountValue = parseFloat(
+        sipAmount?.toString().replace(/,/g, "") || 0
+      ); // Optional chaining and default
+
+      let initialInvestment;
+      if (i === 1) {
+        initialInvestment = currentPortfolio; // Use currentPortfolio for first year
+      } else {
+        initialInvestment = calculatedValues[i - 2]?.portfolioAmount; // Previous portfolio amount4
+        console.log(initialInvestment);
+      }
+
+      const futureValueWithoutComma = parseFloat(
+        futureValue.toString().replace(/,/g, "")
+      );
+      const portfolioAmount = sipAmountValue * 12 + futureValueWithoutComma;
+
       calculatedValues.push({
         period: i,
-        initialValue: formatNumber(currentValue - sipAmount),
+        initialValue: formatNumber(initialInvestment),
         futureValue: formatNumber(futureValue),
-        sipAmount: formatNumber(sipAmount),
+        sipAmount: formatNumber(sipAmountValue),
         growthRate: growthRate.toFixed(1),
-        portfolioValue: formatNumber(currentValue),
+        portfolioValue: formatNumber(previousPortfolioValue),
         multiplier: formatNumber(multiplier(growthRate)),
+        portfolioAmount: formatNumber(portfolioAmount),
       });
+
+      previousPortfolioValue = portfolioAmount; // Update for next iteration
     }
 
     setPortfolioValues(calculatedValues);
   };
-
   return (
     <div className="w-full py-10 px-5">
       <div className="container mx-auto">
@@ -114,7 +140,7 @@ const PortfolioCalculator = () => {
               <div></div>
             </div>
 
-            <div className="flex flex-col gap-5 items-center justify-center bg-background shadow-md shadow-secondary p-5 rounded-lg max-h-[500px] md:sticky md:top-96">
+            {/* <div className="flex flex-col gap-5 items-center justify-center bg-background shadow-md shadow-secondary p-5 rounded-lg max-h-[500px] md:sticky md:top-96">
               <div className="flex justify-center">
                 <h4 className="text-2xl font-bold">Summary</h4>
               </div>
@@ -135,7 +161,7 @@ const PortfolioCalculator = () => {
                   <p>2,000</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="overflow-x-auto mt-4 rounded-xl border border-secondary">
@@ -154,7 +180,9 @@ const PortfolioCalculator = () => {
                   <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
                     Multiplier
                   </th>
-
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Value
+                  </th>
                   <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
                     SIP
                   </th>
@@ -165,7 +193,7 @@ const PortfolioCalculator = () => {
                     Annual Investments
                   </th>
                   <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
-                    Portfolio Value
+                    Portfolio Amount
                   </th>
                 </tr>
               </thead>
@@ -200,7 +228,13 @@ const PortfolioCalculator = () => {
                     >
                       {data.multiplier}
                     </td>
-
+                    <td
+                      className={`px-6 py-0 whitespace-nowrap text-primary ${
+                        data.period % 5 === 0 ? "font-bold text-secondary" : ""
+                      }`}
+                    >
+                      {data.futureValue}
+                    </td>
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
@@ -224,13 +258,15 @@ const PortfolioCalculator = () => {
                         parseFloat(data.sipAmount.replace(/,/g, "")) * 12
                       )}
                     </td>
-
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {data.futureValue}
+                      {formatNumber(
+                        parseFloat(data.sipAmount.replace(/,/g, "")) * 12 +
+                          parseFloat(data.futureValue.replace(/,/g, ""))
+                      )}
                     </td>
                   </tr>
                 ))}
