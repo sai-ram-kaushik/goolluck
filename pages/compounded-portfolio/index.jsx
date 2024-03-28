@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/components/Button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // Function to format numbers in Indian numbering system style
 const formatNumber = (number) => {
@@ -59,7 +59,6 @@ const PortfolioCalculator = () => {
         initialInvestment = currentPortfolio; // Use currentPortfolio for first year
       } else {
         initialInvestment = calculatedValues[i - 2]?.portfolioAmount; // Previous portfolio amount4
-        console.log(initialInvestment);
       }
 
       const futureValueWithoutComma = parseFloat(
@@ -139,29 +138,6 @@ const PortfolioCalculator = () => {
 
               <div></div>
             </div>
-
-            {/* <div className="flex flex-col gap-5 items-center justify-center bg-background shadow-md shadow-secondary p-5 rounded-lg max-h-[500px] md:sticky md:top-96">
-              <div className="flex justify-center">
-                <h4 className="text-2xl font-bold">Summary</h4>
-              </div>
-
-              <div className="flex flex-col items-center gap-5">
-                <div className="flex items-center gap-2">
-                  <p>Expected Amount</p>
-                  <p>2,000</p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <p>Amount Invested</p>
-                  <p>2,000</p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <p>Wealth Gain</p>
-                  <p>2,000</p>
-                </div>
-              </div>
-            </div> */}
           </div>
 
           <div className="overflow-x-auto mt-4 rounded-xl border border-secondary">
@@ -177,20 +153,11 @@ const PortfolioCalculator = () => {
                   <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
                     Growth Rate
                   </th>
-                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
-                    Multiplier
-                  </th>
-                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5">
                     Value
                   </th>
                   <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
-                    SIP
-                  </th>
-                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
-                    Months
-                  </th>
-                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
-                    Annual Investments
+                    Annual SIP Investment
                   </th>
                   <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
                     Portfolio Amount
@@ -212,7 +179,9 @@ const PortfolioCalculator = () => {
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {data.initialValue}
+                      {Math.round(
+                        parseFloat(data.initialValue.replace(/,/g, ""))
+                      )}
                     </td>
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
@@ -226,28 +195,9 @@ const PortfolioCalculator = () => {
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {data.multiplier}
-                    </td>
-                    <td
-                      className={`px-6 py-0 whitespace-nowrap text-primary ${
-                        data.period % 5 === 0 ? "font-bold text-secondary" : ""
-                      }`}
-                    >
-                      {data.futureValue}
-                    </td>
-                    <td
-                      className={`px-6 py-0 whitespace-nowrap text-primary ${
-                        data.period % 5 === 0 ? "font-bold text-secondary" : ""
-                      }`}
-                    >
-                      {data.sipAmount}
-                    </td>
-                    <td
-                      className={`px-6 py-0 whitespace-nowrap text-primary ${
-                        data.period % 5 === 0 ? "font-bold text-secondary" : ""
-                      }`}
-                    >
-                      12
+                      {Math.round(
+                        parseFloat(data.futureValue.replace(/,/g, ""))
+                      )}
                     </td>
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
@@ -263,9 +213,8 @@ const PortfolioCalculator = () => {
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {formatNumber(
-                        parseFloat(data.sipAmount.replace(/,/g, "")) * 12 +
-                          parseFloat(data.futureValue.replace(/,/g, ""))
+                      {Math.round(
+                        parseFloat(data.portfolioAmount.replace(/,/g, ""))
                       )}
                     </td>
                   </tr>

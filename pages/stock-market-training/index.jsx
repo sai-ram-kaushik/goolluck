@@ -10,7 +10,8 @@ import {
 } from "@/constants";
 // import Link from "next/link";
 // import Scroll from "@/components/Scroll";
-
+import { FaCheckCircle } from "react-icons/fa";
+import instructions from "@/public/instructions.svg";
 const Stock_Market_Training = ({ data }) => {
   return (
     <div className="w-full p-5">
@@ -23,7 +24,7 @@ const Stock_Market_Training = ({ data }) => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center text-center lg:text-start mt-5">
+        {/* <div className="flex flex-col items-center text-center lg:text-start mt-5">
           <p className="lg:max-w-[80rem] text-justify text-lg">
             Welcome to Goolluck Investments: Stock market training Institute,
             where Our mission is to convert your financial dreams into
@@ -69,6 +70,45 @@ const Stock_Market_Training = ({ data }) => {
               discount on the total fees.
             </li>
           </ul>
+        </div> */}
+
+        <div className="flex flex-col md:flex-row items-center justify-center gap-36">
+          <div className="flex flex-col items-start gap-2">
+            <div className="flex items-start justify-center gap-2">
+              <FaCheckCircle size={25} />
+              <p className="text-xl">
+                The first class serves as a trial or complementary session for
+                you to get a feel for our teaching methods and course content.
+              </p>
+            </div>
+
+            <div className="flex items-start justify-center gap-2">
+              <FaCheckCircle size={25} />
+              <p className="text-xl">
+                Live Training and No Recording: Our training is conducted live
+                to align with the changing dynamics of the market.
+              </p>
+            </div>
+
+            <div className="flex items-start justify-center gap-2">
+              <FaCheckCircle size={25} />
+              <p className="text-xl">
+                A comprehensive Bullet points rule book to guide you
+                through the essentials of financial trading
+              </p>
+            </div>
+
+            <div className="flex items-start justify-center gap-2">
+              <FaCheckCircle size={25} />
+              <p className="text-xl">
+                Enroll in a group of 2 or more and enjoy a flat 20% additional
+                discount on the total fees.
+              </p>
+            </div>
+          </div>
+          <div>
+            <Image src={instructions} width={600} height={600} />
+          </div>
         </div>
 
         {/* <div className="flex items-center justify-center mt-10">

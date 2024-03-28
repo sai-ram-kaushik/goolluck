@@ -5,7 +5,8 @@ import rohit from "@/public/assets/team/rohit.png";
 import Image from "next/image";
 import { team } from "@/constants";
 import TransitionEffect from "@/components/TransitionEffect";
-
+import portfolio from "@/public/portfolio.svg";
+import stock from "@/public/stock.svg";
 const About = () => {
   return (
     <section className="w-full p-5">
@@ -17,8 +18,8 @@ const About = () => {
           </h3>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-32 mt-10">
-          <div className="artboard phone-2 bg-background shadow-xl shadow-secondary rounded-xl border-2 border-secondary h-full w-full">
+        <div className="flex items-center justify-center gap-32 mt-10">
+          {/* <div className="artboard phone-2 bg-background shadow-xl shadow-secondary rounded-xl border-2 border-secondary h-full w-full">
             <div className="flex flex-col gap-5 items-center justify-center h-full">
               <MdBusinessCenter size={90} />
               <h4 className="text-3xl text-center font-bold text-secondary">
@@ -53,9 +54,9 @@ const About = () => {
                 </ul>
               </ol>
             </div>
-          </div>
+          </div> */}
 
-          <div className="artboard phone-2 bg-background shadow-xl shadow-secondary rounded-xl border-2 border-secondary h-full w-full">
+          {/* <div className="artboard phone-2 bg-background shadow-xl shadow-secondary rounded-xl border-2 border-secondary h-full w-full">
             <div className="flex flex-col gap-5 items-center justify-center h-full">
               <RiStockFill size={90} />
               <h4 className="text-3xl text-center font-bold text-secondary">
@@ -95,7 +96,11 @@ const About = () => {
                 </ul>
               </ol>
             </div>
-          </div>
+          </div> */}
+
+          <Image src={portfolio} width={600} height={600} className="" />
+          <div className="text-[250px]">|</div>
+          <Image src={stock} width={600} height={600} />
         </div>
 
         <div className="flex items-center justify-center mt-10">
