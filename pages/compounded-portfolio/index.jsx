@@ -1,24 +1,15 @@
-"use client";
 import Button from "@/components/Button";
 import { useState } from "react";
 
-// Function to format numbers in Indian numbering system style
-const formatNumber = (number) => {
-  if (typeof number === "string") return number;
-  const formattedNumber = new Intl.NumberFormat("en-IN").format(number);
-  return formattedNumber;
-};
-
 const PortfolioCalculator = () => {
-  const [sipAmount, setSipAmount] = useState(10000); // Initial value
+  const [sipAmount, setSipAmount] = useState(10000);
   const [currentPortfolio, setCurrentPortfolio] = useState(100000);
-  const [growthRate, setGrowthRate] = useState(14); // Growth rate in percentage
-  const [period, setPeriod] = useState(40); // Default period set to 40
+  const [growthRate, setGrowthRate] = useState(14);
+  const [period, setPeriod] = useState(40);
   const [portfolioValues, setPortfolioValues] = useState([]);
 
   const handleSipAmountChange = (e) => {
     if (e.target.value) {
-      // Check if there's a value
       const cleanedValue = e.target.value.replace(/,/g, "");
       setSipAmount(parseFloat(cleanedValue));
     }
@@ -26,7 +17,6 @@ const PortfolioCalculator = () => {
 
   const handleCurrentPortfolioChange = (e) => {
     if (e.target.value) {
-      // Check if there's a value
       const cleanedValue = e.target.value.replace(/,/g, "");
       setCurrentPortfolio(parseFloat(cleanedValue));
     }
@@ -46,19 +36,17 @@ const PortfolioCalculator = () => {
 
   const calculatePortfolioValues = () => {
     const calculatedValues = [];
-    let previousPortfolioValue = currentPortfolio; // Initial portfolio value
+    let previousPortfolioValue = currentPortfolio;
 
     for (let i = 1; i <= period; i++) {
       const futureValue = previousPortfolioValue * (1 + growthRate / 100);
-      const sipAmountValue = parseFloat(
-        sipAmount?.toString().replace(/,/g, "") || 0
-      ); // Optional chaining and default
+      const sipAmountValue = parseFloat(sipAmount.toString().replace(/,/g, ""));
 
       let initialInvestment;
       if (i === 1) {
-        initialInvestment = currentPortfolio; // Use currentPortfolio for first year
+        initialInvestment = currentPortfolio;
       } else {
-        initialInvestment = calculatedValues[i - 2]?.portfolioAmount; // Previous portfolio amount4
+        initialInvestment = calculatedValues[i - 2]?.portfolioAmount;
       }
 
       const futureValueWithoutComma = parseFloat(
@@ -68,27 +56,40 @@ const PortfolioCalculator = () => {
 
       calculatedValues.push({
         period: i,
-        initialValue: formatNumber(initialInvestment),
-        futureValue: formatNumber(futureValue),
-        sipAmount: formatNumber(sipAmountValue),
+        initialValue: initialInvestment.toLocaleString("en-IN", {
+          maximumFractionDigits: 0,
+        }),
+        futureValue: futureValue.toLocaleString("en-IN", {
+          maximumFractionDigits: 0,
+        }),
+        sipAmount: sipAmountValue.toLocaleString("en-IN", {
+          maximumFractionDigits: 0,
+        }),
         growthRate: growthRate.toFixed(1),
-        portfolioValue: formatNumber(previousPortfolioValue),
-        multiplier: formatNumber(multiplier(growthRate)),
-        portfolioAmount: formatNumber(portfolioAmount),
+        portfolioValue: previousPortfolioValue.toLocaleString("en-IN", {
+          maximumFractionDigits: 0,
+        }),
+        multiplier: multiplier(growthRate).toLocaleString("en-IN", {
+          maximumFractionDigits: 0,
+        }),
+        portfolioAmount: portfolioAmount.toLocaleString("en-IN", {
+          maximumFractionDigits: 0,
+        }),
       });
 
-      previousPortfolioValue = portfolioAmount; // Update for next iteration
+      previousPortfolioValue = portfolioAmount;
     }
 
     setPortfolioValues(calculatedValues);
   };
+
   return (
     <div className="w-full py-10 px-5">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row lg:gap-10">
           <div className="flex flex-col items-center gap-5">
             <div className="flex flex-col items-center justify-center bg-background shadow-md shadow-secondary p-5 rounded-lg max-h-[500px] md:sticky md:top-20">
-              <div className="flex flex-col items-center gap-5">
+              <div className="flex flex-col items-center gap-2">
                 <div className="flex flex-col items-center justify-center gap-2">
                   <p>SIP Amount:</p>
                   <input
@@ -179,9 +180,7 @@ const PortfolioCalculator = () => {
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {Math.round(
-                        parseFloat(data.initialValue.replace(/,/g, ""))
-                      )}
+                      {data.initialValue}
                     </td>
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
@@ -195,27 +194,21 @@ const PortfolioCalculator = () => {
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {Math.round(
-                        parseFloat(data.futureValue.replace(/,/g, ""))
-                      )}
+                      {data.futureValue}
                     </td>
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {formatNumber(
-                        parseFloat(data.sipAmount.replace(/,/g, "")) * 12
-                      )}
+                      {data.sipAmount}
                     </td>
                     <td
                       className={`px-6 py-0 whitespace-nowrap text-primary ${
                         data.period % 5 === 0 ? "font-bold text-secondary" : ""
                       }`}
                     >
-                      {Math.round(
-                        parseFloat(data.portfolioAmount.replace(/,/g, ""))
-                      )}
+                      {data.portfolioAmount}
                     </td>
                   </tr>
                 ))}
