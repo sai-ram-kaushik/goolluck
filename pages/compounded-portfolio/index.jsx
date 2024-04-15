@@ -9,15 +9,19 @@ const PortfolioCalculator = () => {
   const [portfolioValues, setPortfolioValues] = useState([]);
 
   const handleSipAmountChange = (e) => {
-    if (e.target.value) {
-      const cleanedValue = e.target.value.replace(/,/g, "");
+    const cleanedValue = e.target.value.replace(/,/g, "");
+    if (cleanedValue === "" || isNaN(cleanedValue)) {
+      setSipAmount(""); // Set to empty string if input is empty or not a number
+    } else {
       setSipAmount(parseFloat(cleanedValue));
     }
   };
 
   const handleCurrentPortfolioChange = (e) => {
-    if (e.target.value) {
-      const cleanedValue = e.target.value.replace(/,/g, "");
+    const cleanedValue = e.target.value.replace(/,/g, "");
+    if (cleanedValue === "" || isNaN(cleanedValue)) {
+      setCurrentPortfolio(""); // Set to empty string if input is empty or not a number
+    } else {
       setCurrentPortfolio(parseFloat(cleanedValue));
     }
   };
