@@ -429,11 +429,11 @@ const Data = () => {
                 <thead>
                   <tr>
                     <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      ETF's
+                      ETF&apos;s
                     </th>
                   </tr>
                   <tr className="text-secondary">
-                    <th className="text-xl">ETF's</th>
+                    <th className="text-xl">ETF&apos;s</th>
                     <th className="px-14 py-5 text-xl">Quantity</th>
                     <th className="px-14 py-5 text-xl">Purchase Price</th>
                     <th className="px-14 py-5 text-xl">Market Price</th>

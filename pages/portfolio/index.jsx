@@ -727,7 +727,7 @@ const Index = () => {
         <table className="flex flex-col mt-8">
           <thead className="flex">
             <tr>
-              <th className="px-32 py-3">ETF's</th>
+              <th className="px-32 py-3">ETF&apos;s</th>
               <th className="px-20 py-3">Quantity</th>
               <th className="px-20 py-3">Purchase Price</th>
               <th className="px-16 py-3">Market Price</th>
