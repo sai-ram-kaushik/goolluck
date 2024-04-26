@@ -4,6 +4,7 @@ import "jspdf-autotable";
 
 const Data = () => {
   const [data, setData] = useState(null);
+  console.log(data);
 
   useEffect(() => {
     // Fetch stored data from local storage
@@ -12,7 +13,7 @@ const Data = () => {
       const parsedData = JSON.parse(storedData);
       setData(parsedData);
     }
-  });
+  }, []);
 
   const handlePrintPDF = () => {
     if (data) {
@@ -34,6 +35,11 @@ const Data = () => {
       const clientNameY = textOffsetY + lineHeight;
       const clientCodeY = textOffsetY + 2 * lineHeight;
       const portfolioDateY = textOffsetY + 3 * lineHeight;
+
+      // Add logo to the top right corner
+      var img = new Image();
+      img.src = "../../public/assets/investor.jpg";
+      doc.addImage(img.src, "JPEG", 10, 78, 12, 15);
 
       doc.text(`Client name: ${data.clientName}`, centerX, clientNameY, {
         align: "center",
@@ -120,7 +126,80 @@ const Data = () => {
         ]),
       });
 
+      // Bonds Table
+      doc.autoTable({
+        startY: doc.autoTable.previous.finalY + 10,
+        headStyles: { fillColor: [255, 165, 0], textColor: [255, 255, 255] }, // Orange background and white text color
+        head: [
+          [
+            "Bonds",
+            "Quantity",
+            "Purchase Price",
+            "Market Price",
+            "Market Value",
+            "Gain/Loss",
+          ],
+        ],
+        body: data.bondsInputValues.map((inputValues) => [
+          inputValues.bonds,
+          inputValues.quantity,
+          inputValues.purchasePrice,
+          inputValues.marketPrice,
+          inputValues.marketValue,
+          inputValues.gainLoss,
+        ]),
+      });
+
+      doc.autoTable({
+        startY: doc.autoTable.previous.finalY + 10,
+        headStyles: { fillColor: [255, 165, 0], textColor: [255, 255, 255] }, // Orange background and white text color
+        head: [
+          [
+            "Mutual Funds",
+            "Quantity",
+            "Purchase Price",
+            "Market Price",
+            "Market Value",
+            "Gain/Loss",
+          ],
+        ],
+        body: data.mutualFundInputValues.map((inputValues) => [
+          inputValues.mf,
+          inputValues.quantity,
+          inputValues.purchasePrice,
+          inputValues.marketPrice,
+          inputValues.marketValue,
+          inputValues.gainLoss,
+        ]),
+      });
+
+      doc.autoTable({
+        startY: doc.autoTable.previous.finalY + 10,
+        headStyles: { fillColor: [255, 165, 0], textColor: [255, 255, 255] }, // Orange background and white text color
+        head: [
+          [
+            "ETF",
+            "Quantity",
+            "Purchase Price",
+            "Market Price",
+            "Market Value",
+            "Gain/Loss",
+          ],
+        ],
+        body: data.etfInputValues.map((inputValues) => [
+          inputValues.bonds,
+          inputValues.quantity,
+          inputValues.purchasePrice,
+          inputValues.marketPrice,
+          inputValues.marketValue,
+          inputValues.gainLoss,
+        ]),
+      });
+
+
       doc.save("portfolio_details.pdf");
+    } else {
+      console.error("Data is undefined.");
     }
   };
 
@@ -235,7 +314,7 @@ const Data = () => {
                 <thead>
                   <tr>
                     <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      Equity
+                      Equity MF
                     </th>
                   </tr>
                   <tr className="text-secondary">
@@ -251,6 +330,121 @@ const Data = () => {
                   {data.emfInputValues.map((inputValues, index) => (
                     <tr key={index}>
                       <td>{inputValues.emf}</td>
+                      <td className="px-14 text-xl">{inputValues.quantity}</td>
+                      <td className="px-14 text-xl">
+                        {inputValues.purchasePrice}
+                      </td>
+                      <td className="px-14 text-xl">
+                        {inputValues.marketPrice}
+                      </td>
+                      <td className="px-14 text-xl">
+                        {inputValues.marketValue}
+                      </td>
+                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Bonds Table */}
+            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+              <table className="table-auto" id="bonds">
+                <thead>
+                  <tr>
+                    <th colSpan="6" className="font-bold mb-10 text-2xl">
+                      Bonds
+                    </th>
+                  </tr>
+                  <tr className="text-secondary">
+                    <th className="text-xl">Bonds</th>
+                    <th className="px-14 py-5 text-xl">Quantity</th>
+                    <th className="px-14 py-5 text-xl">Purchase Price</th>
+                    <th className="px-14 py-5 text-xl">Market Price</th>
+                    <th className="px-14 py-5 text-xl">Market Value</th>
+                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.bondsInputValues.map((inputValues, index) => (
+                    <tr key={index}>
+                      <td>{inputValues.bonds}</td>
+                      <td className="px-14 text-xl">{inputValues.quantity}</td>
+                      <td className="px-14 text-xl">
+                        {inputValues.purchasePrice}
+                      </td>
+                      <td className="px-14 text-xl">
+                        {inputValues.marketPrice}
+                      </td>
+                      <td className="px-14 text-xl">
+                        {inputValues.marketValue}
+                      </td>
+                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+              <table className="table-auto" id="mf">
+                <thead>
+                  <tr>
+                    <th colSpan="6" className="font-bold mb-10 text-2xl">
+                      Mutual Funds
+                    </th>
+                  </tr>
+                  <tr className="text-secondary">
+                    <th className="text-xl">Mutual Funds</th>
+                    <th className="px-14 py-5 text-xl">Quantity</th>
+                    <th className="px-14 py-5 text-xl">Purchase Price</th>
+                    <th className="px-14 py-5 text-xl">Market Price</th>
+                    <th className="px-14 py-5 text-xl">Market Value</th>
+                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.mutualFundInputValues.map((inputValues, index) => (
+                    <tr key={index}>
+                      <td>{inputValues.mf}</td>
+                      <td className="px-14 text-xl">{inputValues.quantity}</td>
+                      <td className="px-14 text-xl">
+                        {inputValues.purchasePrice}
+                      </td>
+                      <td className="px-14 text-xl">
+                        {inputValues.marketPrice}
+                      </td>
+                      <td className="px-14 text-xl">
+                        {inputValues.marketValue}
+                      </td>
+                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+              <table className="table-auto" id="etf">
+                <thead>
+                  <tr>
+                    <th colSpan="6" className="font-bold mb-10 text-2xl">
+                      ETF's
+                    </th>
+                  </tr>
+                  <tr className="text-secondary">
+                    <th className="text-xl">ETF's</th>
+                    <th className="px-14 py-5 text-xl">Quantity</th>
+                    <th className="px-14 py-5 text-xl">Purchase Price</th>
+                    <th className="px-14 py-5 text-xl">Market Price</th>
+                    <th className="px-14 py-5 text-xl">Market Value</th>
+                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.etfInputValues.map((inputValues, index) => (
+                    <tr key={index}>
+                      <td>{inputValues.etf}</td>
                       <td className="px-14 text-xl">{inputValues.quantity}</td>
                       <td className="px-14 text-xl">
                         {inputValues.purchasePrice}
