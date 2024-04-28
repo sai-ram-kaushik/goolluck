@@ -202,54 +202,45 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto py-10 px-5 lg:px-10">
-      {/* client details */}
-      <div className="flex flex-col items-center justify-center min-h-[80px] p-5">
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+    <div className="py-5 overflow-x-hidden">
+      <div className="flex flex-col gap-2 items-center justify-center">
+        <div className="flex items-center justify-center gap-5">
           <input
-            type="text"
             placeholder="Client Name"
+            type="text"
             value={clientName}
             onChange={(e) => setClientName(e.target.value)}
-            className="mt-3 p-2 rounded-xl text-xl bg-background border border-secondary"
           />
-
-          {/* Client Code Input */}
           <input
-            type="text"
             placeholder="Client Code"
+            type="text"
             value={clientCode}
-            onChange={(e) => setClientCode(e.target.value)}
-            className="mt-3 p-2 rounded-xl text-xl bg-background border border-secondary"
+            onChange={(e) => setClientName(e.target.value)}
           />
         </div>
-
-        {/* Portfolio Date Input */}
         <input
           type="date"
           value={portfolioDate}
           onChange={(e) => setPortfolioDate(e.target.value)}
-          className="mt-3 p-2 rounded-xl text-xl bg-background border border-secondary"
+          className="mt-3 p-2 rounded-xl text-sm bg-background border border-secondary"
         />
       </div>
 
-      {/* table details */}
-      <div className="border-2 rounded-xl min-h-screen mt-10">
-        <h4 className="text-4xl font-bold w-full bg-secondary rounded-xl flex justify-end px-16">
-          EQUITY
-        </h4>
+      <div className=" mt-3">
+        <div className="h-8 bg-secondary flex justify-end items-center w-full">
+          <h4 className=" px-16 text-xl font-bold">EQUITY</h4>
+        </div>
 
-        {/* Short Term stocks table */}
-        <table className="flex flex-col mt-8">
-          <thead className="flex">
+        <table className="mt-5 max-w-[1080px]">
+          <thead className="text-center">
             <tr>
-              <th className="px-24 py-3">Short Term Stocks</th>
-              <th className="px-16 py-3">Quantity</th>
-              <th className="px-20 py-3">Purchase Price</th>
-              <th className="px-16 py-3">Market Price</th>
-              <th className="px-16 py-3">Market Value</th>
-              <th className="px-5 py-3">Gain/Loss</th>
-              <th>
+              <th className="text-sm">Short Term Stocks</th>
+              <th className="text-sm">Quantity</th>
+              <th className="text-sm">Purchase Price</th>
+              <th className="text-sm">Market Price</th>
+              <th className="text-sm">Market Value</th>
+              <th className="text-sm">Gain/Loss</th>
+              <th className=" ">
                 <button
                   onClick={() => handleAddInput("sts")}
                   className="px-4 text-xl py-2 rounded-xl bg-secondary text"
@@ -259,11 +250,10 @@ const Index = () => {
               </th>
             </tr>
           </thead>
-
-          <tbody className="flex flex-col items-center">
+          <tbody className="text-center">
             {stsInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-24 py-3">
+                <td className="px-20 py-3">
                   <input
                     type="text"
                     name="sts"
@@ -271,10 +261,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -282,10 +272,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="purchasePrice"
@@ -293,10 +283,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketPrice"
@@ -304,10 +294,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketValue"
@@ -315,10 +305,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="gainLoss"
@@ -326,7 +316,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -334,18 +324,17 @@ const Index = () => {
           </tbody>
         </table>
 
-        {/* long term stocks table */}
-
-        <table className="flex flex-col mt-8">
-          <thead className="flex">
+        {/* lts table */}
+        <table className="">
+          <thead className="text-center">
             <tr>
-              <th className="px-24 py-3">Long Term Stocks</th>
-              <th className="px-16 py-3">Quantity</th>
-              <th className="px-20 py-3">Purchase Price</th>
-              <th className="px-16 py-3">Market Price</th>
-              <th className="px-16 py-3">Market Value</th>
-              <th className="px-5 py-3">Gain/Loss</th>
-              <th>
+              <th className="  text-sm">Long Term Stocks</th>
+              <th className="  text-sm">Quantity</th>
+              <th className="  text-sm">Purchase Price</th>
+              <th className="  text-sm">Market Price</th>
+              <th className="  text-sm">Market Value</th>
+              <th className="  text-sm">Gain/Loss</th>
+              <th className=" ">
                 <button
                   onClick={() => handleAddInput("lts")}
                   className="px-4 text-xl py-2 rounded-xl bg-secondary text"
@@ -355,11 +344,10 @@ const Index = () => {
               </th>
             </tr>
           </thead>
-
-          <tbody className="flex flex-col items-center">
+          <tbody className="text-center">
             {ltsInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-24 py-3">
+                <td className="px-20 py-3">
                   <input
                     type="text"
                     name="lts"
@@ -367,10 +355,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -378,10 +366,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="purchasePrice"
@@ -389,10 +377,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketPrice"
@@ -400,10 +388,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketValue"
@@ -411,10 +399,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="gainLoss"
@@ -422,7 +410,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -430,18 +418,17 @@ const Index = () => {
           </tbody>
         </table>
 
-        {/* Equity MF table */}
-
-        <table className="flex flex-col mt-8">
-          <thead className="flex">
+        {/* emf */}
+        <table className="">
+          <thead className="text-center">
             <tr>
-              <th className="px-32 py-3">Equity MF</th>
-              <th className="px-16 py-3">Quantity</th>
-              <th className="px-20 py-3">Purchase Price</th>
-              <th className="px-16 py-3">Market Price</th>
-              <th className="px-16 py-3">Market Value</th>
-              <th className="px-5 py-3">Gain/Loss</th>
-              <th>
+              <th className="  text-sm">Equity MF</th>
+              <th className="  text-sm">Quantity</th>
+              <th className="  text-sm">Purchase Price</th>
+              <th className="  text-sm">Market Price</th>
+              <th className="  text-sm">Market Value</th>
+              <th className="  text-sm">Gain/Loss</th>
+              <th className=" ">
                 <button
                   onClick={() => handleAddInput("emf")}
                   className="px-4 text-xl py-2 rounded-xl bg-secondary text"
@@ -451,11 +438,10 @@ const Index = () => {
               </th>
             </tr>
           </thead>
-
-          <tbody className="flex flex-col items-center">
+          <tbody className="text-center">
             {emfInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-24 py-3">
+                <td className="px-20 py-3">
                   <input
                     type="text"
                     name="emf"
@@ -463,10 +449,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -474,10 +460,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="purchasePrice"
@@ -485,10 +471,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketPrice"
@@ -496,10 +482,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketValue"
@@ -507,10 +493,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="gainLoss"
@@ -518,7 +504,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -526,22 +512,21 @@ const Index = () => {
           </tbody>
         </table>
 
-        <h4 className="text-4xl font-bold w-full bg-secondary rounded-xl flex justify-end px-16 mt-10">
-          DEBT
-        </h4>
+        {/* debt heading */}
+        <div className="h-8 bg-secondary flex justify-end items-center mt-2">
+          <h4 className=" px-16 text-xl font-bold">DEBT</h4>
+        </div>
 
-        {/* Bonds table */}
-
-        <table className="flex flex-col mt-8">
-          <thead className="flex">
+        <table className="mt-5">
+          <thead className="text-center">
             <tr>
-              <th className="px-36 py-3">Bonds</th>
-              <th className="px-16 py-3">Quantity</th>
-              <th className="px-20 py-3">Purchase Price</th>
-              <th className="px-16 py-3">Market Price</th>
-              <th className="px-16 py-3">Market Value</th>
-              <th className="px-5 py-3">Gain/Loss</th>
-              <th>
+              <th className="  text-sm">Bonds</th>
+              <th className="  text-sm">Quantity</th>
+              <th className="  text-sm">Purchase Price</th>
+              <th className="  text-sm">Market Price</th>
+              <th className="  text-sm">Market Value</th>
+              <th className="  text-sm">Gain/Loss</th>
+              <th className=" ">
                 <button
                   onClick={() => handleAddInputDebt("bonds")}
                   className="px-4 text-xl py-2 rounded-xl bg-secondary text"
@@ -551,74 +536,73 @@ const Index = () => {
               </th>
             </tr>
           </thead>
-
-          <tbody className="flex flex-col items-center">
-            {bondsInputValues.map((inputValue, index) => (
+          <tbody className="text-center">
+            {bondsInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-24 py-3">
+                <td className="px-20 py-3">
                   <input
                     type="text"
                     name="bonds"
-                    value={inputValue.bonds}
+                    value={inputValues.bonds}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="quantity"
-                    value={inputValue.quantity}
+                    value={inputValues.quantity}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="purchasePrice"
-                    value={inputValue.purchasePrice}
+                    value={inputValues.purchasePrice}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketPrice"
-                    value={inputValue.marketPrice}
+                    value={inputValues.marketPrice}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValue.marketValue}
+                    value={inputValues.marketValue}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValue.gainLoss}
+                    value={inputValues.gainLoss}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -626,20 +610,20 @@ const Index = () => {
           </tbody>
         </table>
 
-        {/* Mutual Funds table */}
+        {/* mutual funds table */}
 
-        <table className="flex flex-col mt-8">
-          <thead className="flex">
+        <table className="">
+          <thead className="text-center">
             <tr>
-              <th className="px-28 py-3">Mutual Funds</th>
-              <th className="px-16 py-3">Quantity</th>
-              <th className="px-20 py-3">Purchase Price</th>
-              <th className="px-16 py-3">Market Price</th>
-              <th className="px-16 py-3">Market Value</th>
-              <th className="px-5 py-3">Gain/Loss</th>
-              <th>
+              <th className="  text-sm">Mutual Funds</th>
+              <th className="  text-sm">Quantity</th>
+              <th className="  text-sm">Purchase Price</th>
+              <th className="  text-sm">Market Price</th>
+              <th className="  text-sm">Market Value</th>
+              <th className="  text-sm">Gain/Loss</th>
+              <th className=" ">
                 <button
-                  onClick={() => handleAddInputDebt("mutualFunds")}
+                  onClick={() => handleAddInputDebt("mf")}
                   className="px-4 text-xl py-2 rounded-xl bg-secondary text"
                 >
                   +
@@ -647,22 +631,21 @@ const Index = () => {
               </th>
             </tr>
           </thead>
-
-          <tbody className="flex flex-col items-center">
+          <tbody className="text-center">
             {mutualFundInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-24 py-3">
+                <td className="px-20 py-3">
                   <input
                     type="text"
                     name="mf"
-                    value={inputValues.mutualFunds}
+                    value={inputValues.mf}
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -670,10 +653,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="purchasePrice"
@@ -681,10 +664,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketPrice"
@@ -692,10 +675,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketValue"
@@ -703,10 +686,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="gainLoss"
@@ -714,7 +697,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -722,18 +705,18 @@ const Index = () => {
           </tbody>
         </table>
 
-        {/* ETF's */}
+        {/* etf table */}
 
-        <table className="flex flex-col mt-8">
-          <thead className="flex">
+        <table className="">
+          <thead className="text-center">
             <tr>
-              <th className="px-32 py-3">ETF&apos;s</th>
-              <th className="px-20 py-3">Quantity</th>
-              <th className="px-20 py-3">Purchase Price</th>
-              <th className="px-16 py-3">Market Price</th>
-              <th className="px-16 py-3">Market Value</th>
-              <th className="px-5 py-3">Gain/Loss</th>
-              <th>
+              <th className="  text-sm">ETF&apos;s</th>
+              <th className="  text-sm">Quantity</th>
+              <th className="  text-sm">Purchase Price</th>
+              <th className="  text-sm">Market Price</th>
+              <th className="  text-sm">Market Value</th>
+              <th className="  text-sm">Gain/Loss</th>
+              <th className=" ">
                 <button
                   onClick={() => handleAddInputDebt("etf")}
                   className="px-4 text-xl py-2 rounded-xl bg-secondary text"
@@ -743,11 +726,10 @@ const Index = () => {
               </th>
             </tr>
           </thead>
-
-          <tbody className="flex flex-col items-center">
+          <tbody className="text-center">
             {etfInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-24 py-3">
+                <td className="px-20 py-3">
                   <input
                     type="text"
                     name="etf"
@@ -755,10 +737,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -766,10 +748,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="purchasePrice"
@@ -777,10 +759,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketPrice"
@@ -788,10 +770,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="marketValue"
@@ -799,10 +781,10 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-5 py-3">
+                <td className="px-10 py-2">
                   <input
                     type="number"
                     name="gainLoss"
@@ -810,7 +792,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-full p-2 rounded-xl text-xl bg-background border border-secondary"
+                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
