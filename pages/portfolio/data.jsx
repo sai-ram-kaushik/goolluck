@@ -35,6 +35,7 @@ const Data = () => {
       const clientNameY = textOffsetY + lineHeight;
       const clientCodeY = textOffsetY + 2 * lineHeight;
       const portfolioDateY = textOffsetY + 3 * lineHeight;
+      const portfolioValueY = textOffsetY + 4 * lineHeight;
 
       // Add logo to the top right corner
       var img = new Image();
@@ -53,6 +54,18 @@ const Data = () => {
         portfolioDateY,
         { align: "center" }
       );
+      doc.text(
+        `Portfolio Value: ${data.portfolioValue}`,
+        centerX,
+        portfolioValueY,
+        { align: "center" }
+      );
+
+      doc.autoTable({
+        startY: 40,
+        headStyles: { fillColor: [255, 165, 0], textColor: [255, 255, 255] }, // Orange background and white text color
+        head: [["Equity"]],
+      });
 
       // STS Table
       doc.autoTable({
@@ -504,24 +517,37 @@ const Data = () => {
                 <h4 className=" px-16 text-xl font-bold text-background">
                   EQUITY
                 </h4>
-                <p className="text-background">Total Market Value: </p>
+                <p className="text-background">Portfolio Value: </p>
               </div>
             </div>
 
-            <table className="table-auto">
-              <thead>
-                <tr className="text-secondary">
-                  <th className="px-24 text-sm">Short Term Stocks</th>
-                  <th className="px-10 py-5 text-sm">Quantity</th>
-                  <th className="px-10 py-5 text-sm">Purchase Price</th>
-                  <th className="px-10 py-5 text-sm">Market Price</th>
-                  <th className="px-10 py-5 text-sm">Market Value</th>
-                  <th className="px-10 py-5 text-sm">Gain/Loss</th>
+            <table className="min-w-full divide-background rounded-xl">
+              <thead className="bg-background text-primary">
+                <tr className="text-secondary border-b border-secondary">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Quantity
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Purchase Price
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5">
+                    Market Price
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Market Value
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Gain/Loss
+                  </th>
+                </tr>
+                <tr className="bg-secondary">
+                  <th>Short Term Stocks</th>
                 </tr>
               </thead>
-              <tbody className="">
+              <tbody className="bg-background divide-y divide-primary">
                 {data.stsInputValues.map((inputValues, index) => (
-                  <tr key={index} className="text-center">
+                  <tr key={index} className="text-center text-primary">
                     <td>{inputValues.sts}</td>
                     <td className="text-sm">{inputValues.quantity}</td>
                     <td className="text-sm">{inputValues.purchasePrice}</td>
@@ -537,30 +563,31 @@ const Data = () => {
                 ))}
               </tbody>
 
-              <thead>
-                <tr className="text-secondary">
-                  <th className="px-24 text-sm">Long Term Stocks</th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
+              <thead className="bg-background text-primary">
+                <tr className="text-secondary border-b border-secondary">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                </tr>
+                <tr className="bg-secondary">
+                  <th>Long Term Stocks</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="bg-background divide-y divide-primary">
                 {data.ltsInputValues.map((inputValues, index) => (
-                  <tr key={index} className="text-center">
+                  <tr key={index} className="text-center text-primary">
                     <td>{inputValues.lts}</td>
-                    <td className="px-14 text-sm">{inputValues.quantity}</td>
-                    <td className="px-14 text-sm">
-                      {inputValues.purchasePrice}
-                    </td>
-                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">{inputValues.quantity}</td>
+                    <td className="text-sm">{inputValues.purchasePrice}</td>
+                    <td className="text-sm">{inputValues.marketPrice}</td>
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity}
                     </td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity -
                         inputValues.quantity * inputValues.purchasePrice}
                     </td>
@@ -568,30 +595,31 @@ const Data = () => {
                 ))}
               </tbody>
 
-              <thead>
-                <tr className="text-secondary">
-                  <th className="px-24 text-sm">Equity MF</th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
+              <thead className="bg-background text-primary">
+                <tr className="text-secondary border-b border-secondary">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                </tr>
+                <tr className="bg-secondary">
+                  <th>Equity MF</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="bg-background divide-y divide-primary">
                 {data.emfInputValues.map((inputValues, index) => (
-                  <tr key={index} className="text-center">
+                  <tr key={index} className="text-center text-primary">
                     <td>{inputValues.emf}</td>
-                    <td className="px-14 text-sm">{inputValues.quantity}</td>
-                    <td className="px-14 text-sm">
-                      {inputValues.purchasePrice}
-                    </td>
-                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">{inputValues.quantity}</td>
+                    <td className="text-sm">{inputValues.purchasePrice}</td>
+                    <td className="text-sm">{inputValues.marketPrice}</td>
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity}
                     </td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity -
                         inputValues.quantity * inputValues.purchasePrice}
                     </td>
@@ -605,24 +633,36 @@ const Data = () => {
                 <h4 className=" px-16 text-xl font-bold text-background">
                   DEBT
                 </h4>
-                <p className="text-background">Total Market Value: </p>
               </div>
             </div>
 
-            <table className="table-auto">
-              <thead>
-                <tr className="text-secondary">
-                  <th className="px-24 text-sm">Bonds</th>
-                  <th className="px-10 py-5 text-sm">Quantity</th>
-                  <th className="px-10 py-5 text-sm">Purchase Price</th>
-                  <th className="px-10 py-5 text-sm">Market Price</th>
-                  <th className="px-10 py-5 text-sm">Market Value</th>
-                  <th className="px-10 py-5 text-sm">Gain/Loss</th>
+            <table className="min-w-full divide-background rounded-xl">
+              <thead className="bg-background text-primary">
+                <tr className="text-secondary border-b border-secondary">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Quantity
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Purchase Price
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5">
+                    Market Price
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Market Value
+                  </th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider">
+                    Gain/Loss
+                  </th>
+                </tr>
+                <tr className="bg-secondary">
+                  <th>Bonds</th>
                 </tr>
               </thead>
-              <tbody className="">
+              <tbody className="bg-background divide-y divide-primary">
                 {data.bondsInputValues.map((inputValues, index) => (
-                  <tr key={index} className="text-center">
+                  <tr key={index} className="text-center text-primary">
                     <td>{inputValues.bonds}</td>
                     <td className="text-sm">{inputValues.quantity}</td>
                     <td className="text-sm">{inputValues.purchasePrice}</td>
@@ -638,30 +678,31 @@ const Data = () => {
                 ))}
               </tbody>
 
-              <thead>
-                <tr className="text-secondary">
-                  <th className="px-24 text-sm">Mutual Funds</th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
+              <thead className="bg-background text-primary">
+                <tr className="text-secondary border-b border-secondary">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                </tr>
+                <tr className="bg-secondary">
+                  <th>Mutual Funds</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="bg-background divide-y divide-primary">
                 {data.mutualFundInputValues.map((inputValues, index) => (
-                  <tr key={index} className="text-center">
+                  <tr key={index} className="text-center text-primary">
                     <td>{inputValues.mf}</td>
-                    <td className="px-14 text-sm">{inputValues.quantity}</td>
-                    <td className="px-14 text-sm">
-                      {inputValues.purchasePrice}
-                    </td>
-                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">{inputValues.quantity}</td>
+                    <td className="text-sm">{inputValues.purchasePrice}</td>
+                    <td className="text-sm">{inputValues.marketPrice}</td>
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity}
                     </td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity -
                         inputValues.quantity * inputValues.purchasePrice}
                     </td>
@@ -669,30 +710,31 @@ const Data = () => {
                 ))}
               </tbody>
 
-              <thead>
-                <tr className="text-secondary">
-                  <th className="px-24 text-sm">ETF&apos;s</th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
-                  <th className="px-10 py-5 text-sm"></th>
+              <thead className="bg-background text-primary">
+                <tr className="text-secondary border-b border-secondary">
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider mr-5"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                  <th className="px-6 py-1 text-center text-xs font-bold  uppercase tracking-wider"></th>
+                </tr>
+                <tr className="bg-secondary">
+                  <th>ETF&apos;s</th>
                 </tr>
               </thead>
 
-              <tbody className="">
+              <tbody className="bg-background divide-y divide-primary">
                 {data.etfInputValues.map((inputValues, index) => (
-                  <tr key={index} className="text-center">
+                  <tr key={index} className="text-center text-primary">
                     <td>{inputValues.etf}</td>
-                    <td className="px-14 text-sm">{inputValues.quantity}</td>
-                    <td className="px-14 text-sm">
-                      {inputValues.purchasePrice}
-                    </td>
-                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">{inputValues.quantity}</td>
+                    <td className="text-sm">{inputValues.purchasePrice}</td>
+                    <td className="text-sm">{inputValues.marketPrice}</td>
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity}
                     </td>
-                    <td className="px-14 text-sm">
+                    <td className="text-sm">
                       {inputValues.marketPrice * inputValues.quantity -
                         inputValues.quantity * inputValues.purchasePrice}
                     </td>
@@ -702,11 +744,14 @@ const Data = () => {
             </table>
 
             <div className="flex items-center justify-center gap-10 mt-5">
-              <button className="px-6 py-2 bg-secondary rounded-xl" onClick={handlePrintPDF}>
+              <button
+                className="px-6 py-2 bg-secondary rounded-xl"
+                onClick={handlePrintPDF}
+              >
                 Print PDF
               </button>
               <button className="px-6 py-2 bg-secondary rounded-xl">
-                Send Mail
+                <a href="mailto:sairamkaushik1@gmail.com">Send Mail</a>
               </button>
             </div>
           </>

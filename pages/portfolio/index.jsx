@@ -11,6 +11,7 @@ const Index = () => {
   const [searchInput, setSearchInput] = useState("");
   const [suggestedClients, setSuggestedClients] = useState([]);
   const [totalMarketValue, setTotalMarketValue] = useState(0);
+  const [portfolioValue, setPortfolioValue] = useState(0);
 
   const [stsInputValues, setStsInputValues] = useState([
     {
@@ -202,19 +203,36 @@ const Index = () => {
     router.push(`/portfolio/data`);
   };
 
+  const calculatePortfolioValue = () => {
+    let totalMarketValue = 0;
+
+    // Calculate total market value for short term stocks
+    stsInputValues.forEach((inputValues) => {
+      const marketValue = inputValues.marketPrice * inputValues.quantity;
+      totalMarketValue += marketValue;
+    });
+
+    // Calculate total market value for long term stocks
+    ltsInputValues.forEach((inputValues) => {
+      const marketValue = inputValues.marketPrice * inputValues.quantity;
+      totalMarketValue += marketValue;
+    });
+
+    // Calculate total market value for EMF
+    emfInputValues.forEach((inputValues) => {
+      const marketValue = inputValues.marketPrice * inputValues.quantity;
+      totalMarketValue += marketValue;
+    });
+
+    // Update portfolio value
+    setPortfolioValue(totalMarketValue);
+  };
+
   const handleCheckboxChange = (e) => {
     const isChecked = e.target.checked;
 
     if (isChecked) {
-      // Calculate total market value for all short term stocks
-      let totalMarketValue = 0;
-      stsInputValues.forEach((inputValues) => {
-        const marketValue = inputValues.marketPrice * inputValues.quantity;
-        totalMarketValue += marketValue;
-      });
-
-      // Log the total market value to the console
-      console.log("Total Market Value (STS):", totalMarketValue);
+      calculatePortfolioValue();
     }
   };
 
@@ -247,7 +265,9 @@ const Index = () => {
         <div className="h-8 bg-secondary w-full">
           <div className=" flex items-center w-full h-full justify-between px-20">
             <h4 className=" px-16 text-xl font-bold text-background">EQUITY</h4>
-            <p className="text-background">Total Market Value: </p>
+            <p className="text-background">
+              Portfolio Value: {portfolioValue}{" "}
+            </p>
           </div>
         </div>
 
@@ -356,14 +376,14 @@ const Index = () => {
           <thead className="text-center">
             <tr>
               <th className="text-sm">
-                <input type="checkbox" className="hidden" />
+                <input type="checkbox" onChange={handleCheckboxChange} />
               </th>
               <th className="  text-sm">Long Term Stocks</th>
-              <th className="  text-sm">Quantity</th>
-              <th className="  text-sm">Purchase Price</th>
-              <th className="  text-sm">Market Price</th>
-              <th className="  text-sm">Market Value</th>
-              <th className="  text-sm">Gain/Loss</th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
               <th className=" ">
                 <button
                   onClick={() => handleAddInput("lts")}
@@ -377,7 +397,8 @@ const Index = () => {
           <tbody className="text-center">
             {ltsInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td>
+                <td></td>
+                {/* <td>
                   <input
                     type="checkbox"
                     name={`stockType-${index}`}
@@ -387,7 +408,7 @@ const Index = () => {
                     // }
                     className=""
                   />
-                </td>
+                </td> */}
                 <td className="px-20 ">
                   <input
                     type="text"
@@ -463,14 +484,14 @@ const Index = () => {
           <thead className="text-center">
             <tr>
               <th>
-                <input type="checkbox" className="hidden" />
+                <input type="checkbox" />
               </th>
               <th className="  text-sm">Equity MF</th>
-              <th className="  text-sm">Quantity</th>
-              <th className="  text-sm">Purchase Price</th>
-              <th className="  text-sm">Market Price</th>
-              <th className="  text-sm">Market Value</th>
-              <th className="  text-sm">Gain/Loss</th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
               <th className=" ">
                 <button
                   onClick={() => handleAddInput("emf")}
@@ -484,7 +505,8 @@ const Index = () => {
           <tbody className="text-center">
             {emfInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td>
+                <td></td>
+                {/* <td>
                   <input
                     type="checkbox"
                     name={`stockType-${index}`}
@@ -494,7 +516,7 @@ const Index = () => {
                     // }
                     className=""
                   />
-                </td>
+                </td> */}
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -566,15 +588,17 @@ const Index = () => {
         </table>
 
         {/* debt heading */}
-        <div className="h-8 bg-secondary flex justify-start items-center mt-2">
-          <h4 className=" px-16 text-xl text-background font-bold">DEBT</h4>
+        <div className="h-8 bg-secondary w-full">
+          <div className=" flex items-center w-full h-full justify-between px-20">
+            <h4 className=" px-16 text-xl font-bold text-background">DEBT</h4>
+          </div>
         </div>
 
         <table className="mt-5">
           <thead className="text-center">
             <tr>
               <th>
-                <input type="checkbox" className="hidden" />
+                <input type="checkbox" />
               </th>
               <th className="  text-sm">Bonds</th>
               <th className="  text-sm">Quantity</th>
@@ -595,7 +619,8 @@ const Index = () => {
           <tbody className="text-center">
             {bondsInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td>
+                <td></td>
+                {/* <td>
                   <input
                     type="checkbox"
                     name={`stockType-${index}`}
@@ -605,8 +630,8 @@ const Index = () => {
                     // }
                     className=""
                   />
-                </td>
-                <td className="px-20 py-3">
+                </td> */}
+                <td className="px-20">
                   <input
                     type="text"
                     name="bonds"
@@ -682,14 +707,14 @@ const Index = () => {
           <thead className="text-center">
             <tr>
               <th>
-                <input type="checkbox" className="hidden" />
+                <input type="checkbox" />
               </th>
               <th className="  text-sm">Mutual Funds</th>
-              <th className="  text-sm">Quantity</th>
-              <th className="  text-sm">Purchase Price</th>
-              <th className="  text-sm">Market Price</th>
-              <th className="  text-sm">Market Value</th>
-              <th className="  text-sm">Gain/Loss</th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
               <th className=" ">
                 <button
                   onClick={() => handleAddInputDebt("mf")}
@@ -703,7 +728,8 @@ const Index = () => {
           <tbody className="text-center">
             {mutualFundInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td>
+                <td></td>
+                {/* <td>
                   <input
                     type="checkbox"
                     name={`stockType-${index}`}
@@ -713,7 +739,7 @@ const Index = () => {
                     // }
                     className=""
                   />
-                </td>
+                </td> */}
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -790,14 +816,14 @@ const Index = () => {
           <thead className="text-center">
             <tr>
               <th>
-                <input type="checkbox" className="hidden" />
+                <input type="checkbox" />
               </th>
               <th className="  text-sm">ETF&apos;s</th>
-              <th className="  text-sm">Quantity</th>
-              <th className="  text-sm">Purchase Price</th>
-              <th className="  text-sm">Market Price</th>
-              <th className="  text-sm">Market Value</th>
-              <th className="  text-sm">Gain/Loss</th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
+              <th className="  text-sm"></th>
               <th className=" ">
                 <button
                   onClick={() => handleAddInputDebt("etf")}
@@ -811,7 +837,8 @@ const Index = () => {
           <tbody className="text-center">
             {etfInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td>
+                <td></td>
+                {/* <td>
                   <input
                     type="checkbox"
                     name={`stockType-${index}`}
@@ -821,7 +848,7 @@ const Index = () => {
                     // }
                     className=""
                   />
-                </td>
+                </td> */}
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -891,6 +918,16 @@ const Index = () => {
             ))}
           </tbody>
         </table>
+
+        <div className="h-8 bg-secondary w-full">
+          <div className=" flex items-center w-full h-full justify-between px-20">
+            <h4 className=" px-16 text-xl font-bold text-background">CASH</h4>
+            <p className="text-background">
+              Cash:{" "}
+              <input type="number" className="p-0 bg-background text-primary" />
+            </p>
+          </div>
+        </div>
 
         <div className="flex justify-center mb-10">
           <button
