@@ -215,7 +215,7 @@ const Index = () => {
             placeholder="Client Code"
             type="text"
             value={clientCode}
-            onChange={(e) => setClientName(e.target.value)}
+            onChange={(e) => setClientCode(e.target.value)}
           />
         </div>
         <input
@@ -261,7 +261,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -272,7 +272,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -283,7 +283,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -294,7 +294,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -305,7 +305,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -316,7 +316,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -355,7 +355,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -366,7 +366,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -377,7 +377,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -388,7 +388,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -399,7 +399,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -410,7 +410,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, ltsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -449,7 +449,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -460,7 +460,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -471,7 +471,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -482,7 +482,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -493,7 +493,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -504,7 +504,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChange(e, index, emfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -547,7 +547,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -558,7 +558,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -569,7 +569,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -580,7 +580,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -591,7 +591,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -602,7 +602,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, bondsInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -642,7 +642,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -653,7 +653,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -664,7 +664,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -675,7 +675,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -686,7 +686,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -697,7 +697,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, mutualFundInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
@@ -737,7 +737,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="min-w-full p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -748,7 +748,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -759,7 +759,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -770,7 +770,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -781,7 +781,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
                 <td className="px-10 py-2">
@@ -792,7 +792,7 @@ const Index = () => {
                     onChange={(e) =>
                       handleInputChangeDebt(e, index, etfInputValues)
                     }
-                    className="w-[120px] p-2 rounded-xl text-sm bg-background border border-secondary"
+                    className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
               </tr>
