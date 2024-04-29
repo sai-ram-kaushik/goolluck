@@ -10,6 +10,7 @@ const Index = () => {
   const [clients, setClients] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [suggestedClients, setSuggestedClients] = useState([]);
+  const [totalMarketValue, setTotalMarketValue] = useState(0);
 
   const [stsInputValues, setStsInputValues] = useState([
     {
@@ -201,6 +202,22 @@ const Index = () => {
     router.push(`/portfolio/data`);
   };
 
+  const handleCheckboxChange = (e) => {
+    const isChecked = e.target.checked;
+
+    if (isChecked) {
+      // Calculate total market value for all short term stocks
+      let totalMarketValue = 0;
+      stsInputValues.forEach((inputValues) => {
+        const marketValue = inputValues.marketPrice * inputValues.quantity;
+        totalMarketValue += marketValue;
+      });
+
+      // Log the total market value to the console
+      console.log("Total Market Value (STS):", totalMarketValue);
+    }
+  };
+
   return (
     <div className="py-5 overflow-x-hidden">
       <div className="flex flex-col gap-2 items-center justify-center">
@@ -227,13 +244,19 @@ const Index = () => {
       </div>
 
       <div className=" mt-3">
-        <div className="h-8 bg-secondary flex justify-end items-center w-full">
-          <h4 className=" px-16 text-xl font-bold">EQUITY</h4>
+        <div className="h-8 bg-secondary w-full">
+          <div className=" flex items-center w-full h-full justify-between px-20">
+            <h4 className=" px-16 text-xl font-bold text-background">EQUITY</h4>
+            <p className="text-background">Total Market Value: </p>
+          </div>
         </div>
 
-        <table className="mt-5 max-w-[1080px]">
+        <table className="mt-3 max-w-[1080px]">
           <thead className="text-center">
             <tr>
+              <th className="text-sm">
+                <input type="checkbox" onChange={handleCheckboxChange} />
+              </th>
               <th className="text-sm">Short Term Stocks</th>
               <th className="text-sm">Quantity</th>
               <th className="text-sm">Purchase Price</th>
@@ -253,6 +276,9 @@ const Index = () => {
           <tbody className="text-center">
             {stsInputValues.map((inputValues, index) => (
               <tr key={index}>
+                <td>
+                  {/* This cell is left empty as we only want the checkbox in the heading */}
+                </td>
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -264,7 +290,7 @@ const Index = () => {
                     className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-10 py-2">
+                <td className="py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -301,10 +327,8 @@ const Index = () => {
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValues.marketValue}
-                    onChange={(e) =>
-                      handleInputChange(e, index, stsInputValues)
-                    }
+                    value={inputValues.marketPrice * inputValues.quantity}
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -312,7 +336,10 @@ const Index = () => {
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValues.gainLoss}
+                    value={
+                      inputValues.marketPrice * inputValues.quantity -
+                      inputValues.quantity * inputValues.purchasePrice
+                    }
                     onChange={(e) =>
                       handleInputChange(e, index, stsInputValues)
                     }
@@ -328,6 +355,9 @@ const Index = () => {
         <table className="">
           <thead className="text-center">
             <tr>
+              <th className="text-sm">
+                <input type="checkbox" className="hidden" />
+              </th>
               <th className="  text-sm">Long Term Stocks</th>
               <th className="  text-sm">Quantity</th>
               <th className="  text-sm">Purchase Price</th>
@@ -347,7 +377,18 @@ const Index = () => {
           <tbody className="text-center">
             {ltsInputValues.map((inputValues, index) => (
               <tr key={index}>
-                <td className="px-20 py-3">
+                <td>
+                  <input
+                    type="checkbox"
+                    name={`stockType-${index}`}
+                    value="STS"
+                    // onChange={(e) =>
+                    //   handleCheckboxChange(e, index, stsInputValues)
+                    // }
+                    className=""
+                  />
+                </td>
+                <td className="px-20 ">
                   <input
                     type="text"
                     name="lts"
@@ -358,7 +399,7 @@ const Index = () => {
                     className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-10 py-2">
+                <td className="py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -395,10 +436,8 @@ const Index = () => {
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValues.marketValue}
-                    onChange={(e) =>
-                      handleInputChange(e, index, ltsInputValues)
-                    }
+                    value={inputValues.marketPrice * inputValues.quantity}
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -406,10 +445,11 @@ const Index = () => {
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValues.gainLoss}
-                    onChange={(e) =>
-                      handleInputChange(e, index, ltsInputValues)
+                    value={
+                      inputValues.marketPrice * inputValues.quantity -
+                      inputValues.quantity * inputValues.purchasePrice
                     }
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -422,6 +462,9 @@ const Index = () => {
         <table className="">
           <thead className="text-center">
             <tr>
+              <th>
+                <input type="checkbox" className="hidden" />
+              </th>
               <th className="  text-sm">Equity MF</th>
               <th className="  text-sm">Quantity</th>
               <th className="  text-sm">Purchase Price</th>
@@ -441,6 +484,17 @@ const Index = () => {
           <tbody className="text-center">
             {emfInputValues.map((inputValues, index) => (
               <tr key={index}>
+                <td>
+                  <input
+                    type="checkbox"
+                    name={`stockType-${index}`}
+                    value="STS"
+                    // onChange={(e) =>
+                    //   handleCheckboxChange(e, index, stsInputValues)
+                    // }
+                    className=""
+                  />
+                </td>
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -452,7 +506,7 @@ const Index = () => {
                     className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-10 py-2">
+                <td className="py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -489,10 +543,8 @@ const Index = () => {
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValues.marketValue}
-                    onChange={(e) =>
-                      handleInputChange(e, index, emfInputValues)
-                    }
+                    value={inputValues.marketPrice * inputValues.quantity}
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -500,10 +552,11 @@ const Index = () => {
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValues.gainLoss}
-                    onChange={(e) =>
-                      handleInputChange(e, index, emfInputValues)
+                    value={
+                      inputValues.marketPrice * inputValues.quantity -
+                      inputValues.quantity * inputValues.purchasePrice
                     }
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -513,13 +566,16 @@ const Index = () => {
         </table>
 
         {/* debt heading */}
-        <div className="h-8 bg-secondary flex justify-end items-center mt-2">
-          <h4 className=" px-16 text-xl font-bold">DEBT</h4>
+        <div className="h-8 bg-secondary flex justify-start items-center mt-2">
+          <h4 className=" px-16 text-xl text-background font-bold">DEBT</h4>
         </div>
 
         <table className="mt-5">
           <thead className="text-center">
             <tr>
+              <th>
+                <input type="checkbox" className="hidden" />
+              </th>
               <th className="  text-sm">Bonds</th>
               <th className="  text-sm">Quantity</th>
               <th className="  text-sm">Purchase Price</th>
@@ -539,6 +595,17 @@ const Index = () => {
           <tbody className="text-center">
             {bondsInputValues.map((inputValues, index) => (
               <tr key={index}>
+                <td>
+                  <input
+                    type="checkbox"
+                    name={`stockType-${index}`}
+                    value="STS"
+                    // onChange={(e) =>
+                    //   handleCheckboxChange(e, index, stsInputValues)
+                    // }
+                    className=""
+                  />
+                </td>
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -550,7 +617,7 @@ const Index = () => {
                     className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-10 py-2">
+                <td className="py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -587,10 +654,8 @@ const Index = () => {
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValues.marketValue}
-                    onChange={(e) =>
-                      handleInputChangeDebt(e, index, bondsInputValues)
-                    }
+                    value={inputValues.marketPrice * inputValues.quantity}
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -598,10 +663,11 @@ const Index = () => {
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValues.gainLoss}
-                    onChange={(e) =>
-                      handleInputChangeDebt(e, index, bondsInputValues)
+                    value={
+                      inputValues.marketPrice * inputValues.quantity -
+                      inputValues.quantity * inputValues.purchasePrice
                     }
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -615,6 +681,9 @@ const Index = () => {
         <table className="">
           <thead className="text-center">
             <tr>
+              <th>
+                <input type="checkbox" className="hidden" />
+              </th>
               <th className="  text-sm">Mutual Funds</th>
               <th className="  text-sm">Quantity</th>
               <th className="  text-sm">Purchase Price</th>
@@ -634,6 +703,17 @@ const Index = () => {
           <tbody className="text-center">
             {mutualFundInputValues.map((inputValues, index) => (
               <tr key={index}>
+                <td>
+                  <input
+                    type="checkbox"
+                    name={`stockType-${index}`}
+                    value="STS"
+                    // onChange={(e) =>
+                    //   handleCheckboxChange(e, index, stsInputValues)
+                    // }
+                    className=""
+                  />
+                </td>
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -645,7 +725,7 @@ const Index = () => {
                     className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-10 py-2">
+                <td className=" py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -682,10 +762,8 @@ const Index = () => {
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValues.marketValue}
-                    onChange={(e) =>
-                      handleInputChangeDebt(e, index, mutualFundInputValues)
-                    }
+                    value={inputValues.marketPrice * inputValues.quantity}
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -693,10 +771,11 @@ const Index = () => {
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValues.gainLoss}
-                    onChange={(e) =>
-                      handleInputChangeDebt(e, index, mutualFundInputValues)
+                    value={
+                      inputValues.marketPrice * inputValues.quantity -
+                      inputValues.quantity * inputValues.purchasePrice
                     }
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -710,6 +789,9 @@ const Index = () => {
         <table className="">
           <thead className="text-center">
             <tr>
+              <th>
+                <input type="checkbox" className="hidden" />
+              </th>
               <th className="  text-sm">ETF&apos;s</th>
               <th className="  text-sm">Quantity</th>
               <th className="  text-sm">Purchase Price</th>
@@ -729,6 +811,17 @@ const Index = () => {
           <tbody className="text-center">
             {etfInputValues.map((inputValues, index) => (
               <tr key={index}>
+                <td>
+                  <input
+                    type="checkbox"
+                    name={`stockType-${index}`}
+                    value="STS"
+                    // onChange={(e) =>
+                    //   handleCheckboxChange(e, index, stsInputValues)
+                    // }
+                    className=""
+                  />
+                </td>
                 <td className="px-20 py-3">
                   <input
                     type="text"
@@ -740,7 +833,7 @@ const Index = () => {
                     className="min-w-[250px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
-                <td className="px-10 py-2">
+                <td className=" py-2">
                   <input
                     type="number"
                     name="quantity"
@@ -777,10 +870,8 @@ const Index = () => {
                   <input
                     type="number"
                     name="marketValue"
-                    value={inputValues.marketValue}
-                    onChange={(e) =>
-                      handleInputChangeDebt(e, index, etfInputValues)
-                    }
+                    value={inputValues.marketPrice * inputValues.quantity}
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>
@@ -788,10 +879,11 @@ const Index = () => {
                   <input
                     type="number"
                     name="gainLoss"
-                    value={inputValues.gainLoss}
-                    onChange={(e) =>
-                      handleInputChangeDebt(e, index, etfInputValues)
+                    value={
+                      inputValues.marketPrice * inputValues.quantity -
+                      inputValues.quantity * inputValues.purchasePrice
                     }
+                    readOnly
                     className="w-[120px] p-0 rounded-xl text-sm bg-background border border-secondary"
                   />
                 </td>

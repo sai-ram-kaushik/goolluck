@@ -196,7 +196,6 @@ const Data = () => {
         ]),
       });
 
-
       doc.save("portfolio_details.pdf");
     } else {
       console.error("Data is undefined.");
@@ -204,262 +203,511 @@ const Data = () => {
   };
 
   return (
+    // <div className="container mx-auto py-10 px-5 lg:px-10">
+    //   <div className="flex flex-col items-center justify-center lg:justify-between">
+    //     {data ? (
+    //       <>
+    //         {/* Add a button for printing PDF */}
+    //         <button
+    //           onClick={handlePrintPDF}
+    //           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    //         >
+    //           Print PDF
+    //         </button>
+    //         {/* Client Information */}
+    //         <div className="mb-10 lg:mb-0 lg:mr-10 w-full lg:w-1/2">
+    //           <div className="flex flex-col items-center gap-5">
+    //             <h3 className="text-2xl font-bold">
+    //               Client name: <span>{data.clientName}</span>
+    //             </h3>
+    //             <h4 className="text-xl font-bold">
+    //               Client code: <span>{data.clientCode}</span>
+    //             </h4>
+    //             <p className="text-xl font-bold">
+    //               Portfolio as on date: <span>{data.portfolioDate}</span>
+    //             </p>
+    //           </div>
+    //         </div>
+
+    //         {/* STS Table */}
+    //         <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+    //           <table className="table-auto" id="sts">
+    //             <thead>
+    //               <tr>
+    //                 <th colSpan="6" className="font-bold text-2xl mb-10">
+    //                   Short Term Stocks
+    //                 </th>
+    //               </tr>
+    //               <tr className="text-secondary">
+    //                 <th className="text-xl">Short Term Stocks</th>
+    //                 <th className="px-14 py-5 text-xl">Quantity</th>
+    //                 <th className="px-14 py-5 text-xl">Purchase Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Value</th>
+    //                 <th className="px-14 py-5 text-xl">Gain/Loss</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>
+    //               {data.stsInputValues.map((inputValues, index) => (
+    //                 <tr key={index}>
+    //                   <td>{inputValues.sts}</td>
+    //                   <td className="px-14 text-xl">{inputValues.quantity}</td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.purchasePrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity -
+    //                       inputValues.quantity * inputValues.purchasePrice}
+    //                   </td>
+    //                 </tr>
+    //               ))}
+    //             </tbody>
+    //           </table>
+    //         </div>
+
+    //         {/* LTS Table */}
+    //         <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+    //           <table className="table-auto" id="lts">
+    //             <thead>
+    //               <tr>
+    //                 <th colSpan="6" className="font-bold mb-10 text-2xl">
+    //                   Long Term Stocks
+    //                 </th>
+    //               </tr>
+    //               <tr className="text-secondary">
+    //                 <th className="text-xl">Long Term Stocks</th>
+    //                 <th className="px-14 py-5 text-xl">Quantity</th>
+    //                 <th className="px-14 py-5 text-xl">Purchase Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Value</th>
+    //                 <th className="px-14 py-5 text-xl">Gain/Loss</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>
+    //               {data.ltsInputValues.map((inputValues, index) => (
+    //                 <tr key={index}>
+    //                   <td>{inputValues.lts}</td>
+    //                   <td className="px-14 text-xl">{inputValues.quantity}</td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.purchasePrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity -
+    //                       inputValues.quantity * inputValues.purchasePrice}
+    //                   </td>
+    //                 </tr>
+    //               ))}
+    //             </tbody>
+    //           </table>
+    //         </div>
+
+    //         {/* EMF Table */}
+    //         <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+    //           <table className="table-auto" id="emf">
+    //             <thead>
+    //               <tr>
+    //                 <th colSpan="6" className="font-bold mb-10 text-2xl">
+    //                   Equity MF
+    //                 </th>
+    //               </tr>
+    //               <tr className="text-secondary">
+    //                 <th className="text-xl">Equity MF</th>
+    //                 <th className="px-14 py-5 text-xl">Quantity</th>
+    //                 <th className="px-14 py-5 text-xl">Purchase Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Value</th>
+    //                 <th className="px-14 py-5 text-xl">Gain/Loss</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>
+    //               {data.emfInputValues.map((inputValues, index) => (
+    //                 <tr key={index}>
+    //                   <td>{inputValues.emf}</td>
+    //                   <td className="px-14 text-xl">{inputValues.quantity}</td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.purchasePrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity -
+    //                       inputValues.quantity * inputValues.purchasePrice}
+    //                   </td>
+    //                 </tr>
+    //               ))}
+    //             </tbody>
+    //           </table>
+    //         </div>
+
+    //         {/* Bonds Table */}
+    //         <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+    //           <table className="table-auto" id="bonds">
+    //             <thead>
+    //               <tr>
+    //                 <th colSpan="6" className="font-bold mb-10 text-2xl">
+    //                   Bonds
+    //                 </th>
+    //               </tr>
+    //               <tr className="text-secondary">
+    //                 <th className="text-xl">Bonds</th>
+    //                 <th className="px-14 py-5 text-xl">Quantity</th>
+    //                 <th className="px-14 py-5 text-xl">Purchase Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Value</th>
+    //                 <th className="px-14 py-5 text-xl">Gain/Loss</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>
+    //               {data.bondsInputValues.map((inputValues, index) => (
+    //                 <tr key={index}>
+    //                   <td>{inputValues.bonds}</td>
+    //                   <td className="px-14 text-xl">{inputValues.quantity}</td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.purchasePrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity -
+    //                       inputValues.quantity * inputValues.purchasePrice}
+    //                   </td>
+    //                 </tr>
+    //               ))}
+    //             </tbody>
+    //           </table>
+    //         </div>
+
+    //         <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+    //           <table className="table-auto" id="mf">
+    //             <thead>
+    //               <tr>
+    //                 <th colSpan="6" className="font-bold mb-10 text-2xl">
+    //                   Mutual Funds
+    //                 </th>
+    //               </tr>
+    //               <tr className="text-secondary">
+    //                 <th className="text-xl">Mutual Funds</th>
+    //                 <th className="px-14 py-5 text-xl">Quantity</th>
+    //                 <th className="px-14 py-5 text-xl">Purchase Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Value</th>
+    //                 <th className="px-14 py-5 text-xl">Gain/Loss</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>
+    //               {data.mutualFundInputValues.map((inputValues, index) => (
+    //                 <tr key={index}>
+    //                   <td>{inputValues.mf}</td>
+    //                   <td className="px-14 text-xl">{inputValues.quantity}</td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.purchasePrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity -
+    //                       inputValues.quantity * inputValues.purchasePrice}
+    //                   </td>
+    //                 </tr>
+    //               ))}
+    //             </tbody>
+    //           </table>
+    //         </div>
+
+    //         <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
+    //           <table className="table-auto" id="etf">
+    //             <thead>
+    //               <tr>
+    //                 <th colSpan="6" className="font-bold mb-10 text-2xl">
+    //                   ETF&apos;s
+    //                 </th>
+    //               </tr>
+    //               <tr className="text-secondary">
+    //                 <th className="text-xl">ETF&apos;s</th>
+    //                 <th className="px-14 py-5 text-xl">Quantity</th>
+    //                 <th className="px-14 py-5 text-xl">Purchase Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Price</th>
+    //                 <th className="px-14 py-5 text-xl">Market Value</th>
+    //                 <th className="px-14 py-5 text-xl">Gain/Loss</th>
+    //               </tr>
+    //             </thead>
+    //             <tbody>
+    //               {data.etfInputValues.map((inputValues, index) => (
+    //                 <tr key={index}>
+    //                   <td>{inputValues.etf}</td>
+    //                   <td className="px-14 text-xl">{inputValues.quantity}</td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.purchasePrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity}
+    //                   </td>
+    //                   <td className="px-14 text-xl">
+    //                     {inputValues.marketPrice * inputValues.quantity -
+    //                       inputValues.quantity * inputValues.purchasePrice}
+    //                   </td>
+    //                 </tr>
+    //               ))}
+    //             </tbody>
+    //           </table>
+    //         </div>
+    //       </>
+    //     ) : (
+    //       <p className="text-xl font-bold">No data available.</p>
+    //     )}
+    //   </div>
+    // </div>
+
     <div className="container mx-auto py-10 px-5 lg:px-10">
-      <div className="flex flex-col items-center justify-center lg:justify-between">
+      <div className="flex flex-col items-center justify-center gap-3">
         {data ? (
           <>
-            {/* Add a button for printing PDF */}
-            <button
-              onClick={handlePrintPDF}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Print PDF
-            </button>
-            {/* Client Information */}
-            <div className="mb-10 lg:mb-0 lg:mr-10 w-full lg:w-1/2">
-              <div className="flex flex-col items-center gap-5">
-                <h3 className="text-2xl font-bold">
-                  Client name: <span>{data.clientName}</span>
-                </h3>
-                <h4 className="text-xl font-bold">
-                  Client code: <span>{data.clientCode}</span>
+            {/* client details */}
+            <div className="flex flex-col items-center justify-center gap-2">
+              <h4 className="text-2xl font-bold">
+                {data.clientName} - {data.clientCode}
+              </h4>
+              <p className="font-bold">Portfolio as on {data.portfolioDate}</p>
+            </div>
+
+            {/* tables */}
+
+            <div className="h-8 bg-secondary w-full">
+              <div className=" flex items-center w-full h-full justify-between px-5">
+                <h4 className=" px-16 text-xl font-bold text-background">
+                  EQUITY
                 </h4>
-                <p className="text-xl font-bold">
-                  Portfolio as on date: <span>{data.portfolioDate}</span>
-                </p>
+                <p className="text-background">Total Market Value: </p>
               </div>
             </div>
 
-            {/* STS Table */}
-            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
-              <table className="table-auto" id="sts">
-                <thead>
-                  <tr>
-                    <th colSpan="6" className="font-bold text-2xl mb-10">
-                      Short Term Stocks
-                    </th>
+            <table className="table-auto">
+              <thead>
+                <tr className="text-secondary">
+                  <th className="px-24 text-sm">Short Term Stocks</th>
+                  <th className="px-10 py-5 text-sm">Quantity</th>
+                  <th className="px-10 py-5 text-sm">Purchase Price</th>
+                  <th className="px-10 py-5 text-sm">Market Price</th>
+                  <th className="px-10 py-5 text-sm">Market Value</th>
+                  <th className="px-10 py-5 text-sm">Gain/Loss</th>
+                </tr>
+              </thead>
+              <tbody className="">
+                {data.stsInputValues.map((inputValues, index) => (
+                  <tr key={index} className="text-center">
+                    <td>{inputValues.sts}</td>
+                    <td className="text-sm">{inputValues.quantity}</td>
+                    <td className="text-sm">{inputValues.purchasePrice}</td>
+                    <td className="text-sm">{inputValues.marketPrice}</td>
+                    <td className="text-sm">
+                      {inputValues.marketPrice * inputValues.quantity}
+                    </td>
+                    <td className="text-sm">
+                      {inputValues.marketPrice * inputValues.quantity -
+                        inputValues.quantity * inputValues.purchasePrice}
+                    </td>
                   </tr>
-                  <tr className="text-secondary">
-                    <th className="text-xl">Short Term Stocks</th>
-                    <th className="px-14 py-5 text-xl">Quantity</th>
-                    <th className="px-14 py-5 text-xl">Purchase Price</th>
-                    <th className="px-14 py-5 text-xl">Market Price</th>
-                    <th className="px-14 py-5 text-xl">Market Value</th>
-                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
+                ))}
+              </tbody>
+
+              <thead>
+                <tr className="text-secondary">
+                  <th className="px-24 text-sm">Long Term Stocks</th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {data.ltsInputValues.map((inputValues, index) => (
+                  <tr key={index} className="text-center">
+                    <td>{inputValues.lts}</td>
+                    <td className="px-14 text-sm">{inputValues.quantity}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.purchasePrice}
+                    </td>
+                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity}
+                    </td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity -
+                        inputValues.quantity * inputValues.purchasePrice}
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {data.stsInputValues.map((inputValues, index) => (
-                    <tr key={index}>
-                      <td>{inputValues.sts}</td>
-                      <td className="px-14 text-xl">{inputValues.quantity}</td>
-                      <td className="px-14 text-xl">
-                        {inputValues.purchasePrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketPrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketValue}
-                      </td>
-                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+
+              <thead>
+                <tr className="text-secondary">
+                  <th className="px-24 text-sm">Equity MF</th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {data.emfInputValues.map((inputValues, index) => (
+                  <tr key={index} className="text-center">
+                    <td>{inputValues.emf}</td>
+                    <td className="px-14 text-sm">{inputValues.quantity}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.purchasePrice}
+                    </td>
+                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity}
+                    </td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity -
+                        inputValues.quantity * inputValues.purchasePrice}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <div className="h-8 bg-secondary w-full">
+              <div className=" flex items-center w-full h-full justify-between px-5">
+                <h4 className=" px-16 text-xl font-bold text-background">
+                  DEBT
+                </h4>
+                <p className="text-background">Total Market Value: </p>
+              </div>
             </div>
 
-            {/* LTS Table */}
-            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
-              <table className="table-auto" id="lts">
-                <thead>
-                  <tr>
-                    <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      Long Term Stocks
-                    </th>
+            <table className="table-auto">
+              <thead>
+                <tr className="text-secondary">
+                  <th className="px-24 text-sm">Bonds</th>
+                  <th className="px-10 py-5 text-sm">Quantity</th>
+                  <th className="px-10 py-5 text-sm">Purchase Price</th>
+                  <th className="px-10 py-5 text-sm">Market Price</th>
+                  <th className="px-10 py-5 text-sm">Market Value</th>
+                  <th className="px-10 py-5 text-sm">Gain/Loss</th>
+                </tr>
+              </thead>
+              <tbody className="">
+                {data.bondsInputValues.map((inputValues, index) => (
+                  <tr key={index} className="text-center">
+                    <td>{inputValues.bonds}</td>
+                    <td className="text-sm">{inputValues.quantity}</td>
+                    <td className="text-sm">{inputValues.purchasePrice}</td>
+                    <td className="text-sm">{inputValues.marketPrice}</td>
+                    <td className="text-sm">
+                      {inputValues.marketPrice * inputValues.quantity}
+                    </td>
+                    <td className="text-sm">
+                      {inputValues.marketPrice * inputValues.quantity -
+                        inputValues.quantity * inputValues.purchasePrice}
+                    </td>
                   </tr>
-                  <tr className="text-secondary">
-                    <th className="text-xl">Long Term Stocks</th>
-                    <th className="px-14 py-5 text-xl">Quantity</th>
-                    <th className="px-14 py-5 text-xl">Purchase Price</th>
-                    <th className="px-14 py-5 text-xl">Market Price</th>
-                    <th className="px-14 py-5 text-xl">Market Value</th>
-                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.ltsInputValues.map((inputValues, index) => (
-                    <tr key={index}>
-                      <td>{inputValues.lts}</td>
-                      <td className="px-14 text-xl">{inputValues.quantity}</td>
-                      <td className="px-14 text-xl">
-                        {inputValues.purchasePrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketPrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketValue}
-                      </td>
-                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
 
-            {/* EMF Table */}
-            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
-              <table className="table-auto" id="emf">
-                <thead>
-                  <tr>
-                    <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      Equity MF
-                    </th>
-                  </tr>
-                  <tr className="text-secondary">
-                    <th className="text-xl">Equity MF</th>
-                    <th className="px-14 py-5 text-xl">Quantity</th>
-                    <th className="px-14 py-5 text-xl">Purchase Price</th>
-                    <th className="px-14 py-5 text-xl">Market Price</th>
-                    <th className="px-14 py-5 text-xl">Market Value</th>
-                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.emfInputValues.map((inputValues, index) => (
-                    <tr key={index}>
-                      <td>{inputValues.emf}</td>
-                      <td className="px-14 text-xl">{inputValues.quantity}</td>
-                      <td className="px-14 text-xl">
-                        {inputValues.purchasePrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketPrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketValue}
-                      </td>
-                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+              <thead>
+                <tr className="text-secondary">
+                  <th className="px-24 text-sm">Mutual Funds</th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                </tr>
+              </thead>
 
-            {/* Bonds Table */}
-            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
-              <table className="table-auto" id="bonds">
-                <thead>
-                  <tr>
-                    <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      Bonds
-                    </th>
+              <tbody>
+                {data.mutualFundInputValues.map((inputValues, index) => (
+                  <tr key={index} className="text-center">
+                    <td>{inputValues.mf}</td>
+                    <td className="px-14 text-sm">{inputValues.quantity}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.purchasePrice}
+                    </td>
+                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity}
+                    </td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity -
+                        inputValues.quantity * inputValues.purchasePrice}
+                    </td>
                   </tr>
-                  <tr className="text-secondary">
-                    <th className="text-xl">Bonds</th>
-                    <th className="px-14 py-5 text-xl">Quantity</th>
-                    <th className="px-14 py-5 text-xl">Purchase Price</th>
-                    <th className="px-14 py-5 text-xl">Market Price</th>
-                    <th className="px-14 py-5 text-xl">Market Value</th>
-                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.bondsInputValues.map((inputValues, index) => (
-                    <tr key={index}>
-                      <td>{inputValues.bonds}</td>
-                      <td className="px-14 text-xl">{inputValues.quantity}</td>
-                      <td className="px-14 text-xl">
-                        {inputValues.purchasePrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketPrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketValue}
-                      </td>
-                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
 
-            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
-              <table className="table-auto" id="mf">
-                <thead>
-                  <tr>
-                    <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      Mutual Funds
-                    </th>
-                  </tr>
-                  <tr className="text-secondary">
-                    <th className="text-xl">Mutual Funds</th>
-                    <th className="px-14 py-5 text-xl">Quantity</th>
-                    <th className="px-14 py-5 text-xl">Purchase Price</th>
-                    <th className="px-14 py-5 text-xl">Market Price</th>
-                    <th className="px-14 py-5 text-xl">Market Value</th>
-                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.mutualFundInputValues.map((inputValues, index) => (
-                    <tr key={index}>
-                      <td>{inputValues.mf}</td>
-                      <td className="px-14 text-xl">{inputValues.quantity}</td>
-                      <td className="px-14 text-xl">
-                        {inputValues.purchasePrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketPrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketValue}
-                      </td>
-                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+              <thead>
+                <tr className="text-secondary">
+                  <th className="px-24 text-sm">ETF&apos;s</th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                  <th className="px-10 py-5 text-sm"></th>
+                </tr>
+              </thead>
 
-            <div className="table-container mt-5 w-full flex flex-col items-center gap-10">
-              <table className="table-auto" id="etf">
-                <thead>
-                  <tr>
-                    <th colSpan="6" className="font-bold mb-10 text-2xl">
-                      ETF&apos;s
-                    </th>
+              <tbody className="">
+                {data.etfInputValues.map((inputValues, index) => (
+                  <tr key={index} className="text-center">
+                    <td>{inputValues.etf}</td>
+                    <td className="px-14 text-sm">{inputValues.quantity}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.purchasePrice}
+                    </td>
+                    <td className="px-14 text-sm">{inputValues.marketPrice}</td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity}
+                    </td>
+                    <td className="px-14 text-sm">
+                      {inputValues.marketPrice * inputValues.quantity -
+                        inputValues.quantity * inputValues.purchasePrice}
+                    </td>
                   </tr>
-                  <tr className="text-secondary">
-                    <th className="text-xl">ETF&apos;s</th>
-                    <th className="px-14 py-5 text-xl">Quantity</th>
-                    <th className="px-14 py-5 text-xl">Purchase Price</th>
-                    <th className="px-14 py-5 text-xl">Market Price</th>
-                    <th className="px-14 py-5 text-xl">Market Value</th>
-                    <th className="px-14 py-5 text-xl">Gain/Loss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.etfInputValues.map((inputValues, index) => (
-                    <tr key={index}>
-                      <td>{inputValues.etf}</td>
-                      <td className="px-14 text-xl">{inputValues.quantity}</td>
-                      <td className="px-14 text-xl">
-                        {inputValues.purchasePrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketPrice}
-                      </td>
-                      <td className="px-14 text-xl">
-                        {inputValues.marketValue}
-                      </td>
-                      <td className="px-14 text-xl">{inputValues.gainLoss}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+            </table>
+
+            <div className="flex items-center justify-center gap-10 mt-5">
+              <button className="px-6 py-2 bg-secondary rounded-xl" onClick={handlePrintPDF}>
+                Print PDF
+              </button>
+              <button className="px-6 py-2 bg-secondary rounded-xl">
+                Send Mail
+              </button>
             </div>
           </>
         ) : (
