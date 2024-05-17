@@ -19,88 +19,34 @@ const About = () => {
         </div>
 
         <div className="flex items-center justify-center gap-32 mt-10">
-          {/* <div className="artboard phone-2 bg-background shadow-xl shadow-secondary rounded-xl border-2 border-secondary h-full w-full">
-            <div className="flex flex-col gap-5 items-center justify-center h-full">
-              <MdBusinessCenter size={90} />
-              <h4 className="text-3xl text-center font-bold text-secondary">
-                Portfolio Advisory Firm
-              </h4>
-              <ol
-                role="list"
-                className="marker:text-secondary list-decimal text-xl flex flex-col items-start px-10 py-5"
-              >
-                <li className="font-bold">Introduction:</li>
-                <ul
-                  role="list"
-                  className="marker:text-secondary list-disc w-full mt-2"
-                >
-                  <li className="ml-5 ">Welcome to Goolluck Investments.</li>
-                  <li className="ml-5 text-start text-lg">
-                    We are a reliable and comprehensive financial service
-                    provider.
-                  </li>
-                </ul>
-                <li className="font-bold mt-2">
-                  Understanding of Client Goals:
-                </li>
-                <ul role="list" className="marker:text-secondary list-disc">
-                  <li className="ml-5 text-start text-lg mt-2">
-                    We understand the importance of your financial goals.
-                  </li>
-                  <li className="ml-5 text-start text-lg">
-                    We strive to offer tailored solutions that meet your unique
-                    needs.
-                  </li>
-                </ul>
-              </ol>
-            </div>
-          </div> */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-52 mt-10">
+          <div className="flex flex-col items-center gap-10">
+            <h3 className="text-4xl text-secondary">Portfolio Advisory Firm</h3>
+            <p className="text-lg text-justify">
+              Welcome to <b>GOOLLUCK INVESTMENTS</b>, your reliable and
+              comprehensive financial service provider. We understand the
+              importance of your financial goals and strive to offer tailored
+              solutions that meet your unique needs. With years of experience in
+              the industry, we have established ourselves as industry experts
+              committed to assisting individuals and businesses in achieving
+              financial success.
+            </p>
+          </div>
 
-          {/* <div className="artboard phone-2 bg-background shadow-xl shadow-secondary rounded-xl border-2 border-secondary h-full w-full">
-            <div className="flex flex-col gap-5 items-center justify-center h-full">
-              <RiStockFill size={90} />
-              <h4 className="text-3xl text-center font-bold text-secondary">
-                Stock Market Training Institute
-              </h4>
-              <ol
-                role="list"
-                className="marker:text-secondary list-decimal text-xl flex flex-col items-start px-10 py-5"
-              >
-                <li className="font-bold">Introduction:</li>
-                <ul
-                  role="list"
-                  className="marker:text-secondary list-disc w-full mt-2"
-                >
-                  <li className="ml-5 ">
-                    As a leading financial training institute.
-                  </li>
-                </ul>
-                <li className="font-bold mt-2">Mission:</li>
-                <ul role="list" className="marker:text-secondary list-disc">
-                  <li className="ml-5 text-start text-lg mt-2">
-                    Dedicated to empowering individuals and professionals.
-                  </li>
-                  <li className="ml-5 text-start text-lg">
-                    Providing knowledge and skills essential for excelling in
-                    finance.
-                  </li>
-                </ul>
-                <li className="font-bold mt-2">Core Values:</li>
-                <ul role="list" className="marker:text-secondary list-disc">
-                  <li className="ml-5 text-start text-lg mt-2">
-                    Commitment to excellence.
-                  </li>
-                  <li className="ml-5 text-start text-lg">
-                    Embracing innovation.
-                  </li>
-                </ul>
-              </ol>
-            </div>
-          </div> */}
+          <div className="flex flex-col items-center text-center gap-10">
+            <h3 className="text-4xl text-secondary">Stock Market Training Institute</h3>
+            <p className="text-justify  text-lg">
+              As a leading financial training institute, we are dedicated to
+              empowering individuals and professionals. Our focus is on
+              providing knowledge and skills essential for excelling in the
+              dynamic world of finance. Through a commitment to excellence,
+              innovation, and a passion for education, we have become a trusted
+              resource for financial education and training.
+            </p>
+          </div>
+        </div>
 
-          <Image src={portfolio} width={600} height={600} className="" />
-          <div className="text-[250px]">|</div>
-          <Image src={stock} width={600} height={600} />
+         
         </div>
 
         <div className="flex items-center justify-center mt-10">
