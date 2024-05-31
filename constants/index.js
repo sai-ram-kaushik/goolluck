@@ -23,15 +23,11 @@ export const menuList = [
     key: "Portfolio Calculator",
   },
   {
-    label: "Vision",
-    path: "/vision",
+    label: "Vision & Mission",
+    path: "/vision-and-mission",
     key: "vision",
   },
-  {
-    label: "Mission",
-    path: "/mission",
-    key: "mission",
-  },
+ 
   { label: "Contact Us", path: "/contact", key: "Contact Us" },
 ];
 
