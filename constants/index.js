@@ -22,11 +22,6 @@ export const menuList = [
     path: "/compounded-portfolio",
     key: "Portfolio Calculator",
   },
-  {
-    label: "Vision & Mission",
-    path: "/vision-and-mission",
-    key: "vision",
-  },
  
   { label: "Contact Us", path: "/contact", key: "Contact Us" },
 ];
