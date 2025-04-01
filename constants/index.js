@@ -191,10 +191,10 @@ export const life_at_goolluck_training_offline = [
 ];
 
 export const life_at_goolluck = [
-  {
-    photo: "/assets/life_at_goolluck/recreational_activities/rohit.jpeg",
-    key: 45,
-  },
+  // {
+  //   photo: "/assets/life_at_goolluck/recreational_activities/rohit.jpeg",
+  //   key: 45,
+  // },
   { photo: "/assets/goolluck/1.jpeg" },
   { photo: "/assets/goolluck/2.jpeg" },
   { photo: "/assets/goolluck/3.jpeg" },
@@ -211,9 +211,9 @@ export const life_at_goolluck = [
   {
     photo: "/assets/goolluck/12.jpeg",
   },
-  {
-    photo: "/assets/goolluck/13.jpeg",
-  },
+  // {
+  //   photo: "/assets/goolluck/13.jpeg",
+  // },
   {
     photo: "/assets/goolluck/14.jpeg",
   },
@@ -244,9 +244,9 @@ export const life_at_goolluck = [
   {
     photo: "/assets/goolluck/23.jpeg",
   },
-  {
-    photo: "/assets/goolluck/24.jpeg",
-  },
+  // {
+  //   photo: "/assets/goolluck/24.jpeg",
+  // },
   {
     photo: "/assets/goolluck/25.jpeg",
   },
