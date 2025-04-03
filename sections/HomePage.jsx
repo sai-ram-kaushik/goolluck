@@ -18,8 +18,8 @@ const HomePage = () => {
             </h1>
 
             <p className='text-justify lg:text-start'>
-              Goolluck Investments is a stock market training institute. Learn
-              directly from trader. Come & learn directly from traders.
+              Goolluck Investments is a stock market training institute. Come &
+              learn directly from traders.
             </p>
 
             <Button>Get Started</Button>

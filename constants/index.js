@@ -223,15 +223,15 @@ export const life_at_goolluck = [
   {
     photo: "/assets/goolluck/16.jpeg",
   },
-  {
-    photo: "/assets/goolluck/17.jpeg",
-  },
+  // {
+  //   photo: "/assets/goolluck/17.jpeg",
+  // },
   {
     photo: "/assets/goolluck/18.jpeg",
   },
-  {
-    photo: "/assets/goolluck/19.jpeg",
-  },
+  // {
+  //   photo: "/assets/goolluck/19.jpeg",
+  // },
   {
     photo: "/assets/goolluck/20.jpeg",
   },
@@ -250,9 +250,9 @@ export const life_at_goolluck = [
   {
     photo: "/assets/goolluck/25.jpeg",
   },
-  {
-    photo: "/assets/goolluck/26.jpeg",
-  },
+  // {
+  //   photo: "/assets/goolluck/26.jpeg",
+  // },
   {
     photo: "/assets/goolluck/27.jpeg",
   },
