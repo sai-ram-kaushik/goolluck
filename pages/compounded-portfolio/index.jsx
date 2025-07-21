@@ -145,7 +145,7 @@ const PortfolioCalculator = () => {
             </div>
           </div>
 
-          <div className="overflow-x-auto mt-4 rounded-xl border border-secondary">
+          <div className="overflow-x-auto mt-4 rounded-xl border border-secondary min-h-[90vh]">
             <table className="min-w-full divide-background rounded-xl">
               <thead className="bg-background text-primary">
                 <tr className="text-secondary border-b border-secondary">
